@@ -1,0 +1,4 @@
+{
+    "cmd": ["petite", "--script", "$file"],
+    "selector": "source.scheme"
+}

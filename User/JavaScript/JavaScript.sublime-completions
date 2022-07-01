@@ -1,0 +1,12 @@
+{
+    "scope": "source.js",
+    "completions": [
+        {
+            "trigger": "cl",
+            "annotation": "console.log()",
+            "contents": "console.log(${1})${0}",
+            "kind": "snippet",
+            "details": "A console.log() template."
+        }
+    ]
+}

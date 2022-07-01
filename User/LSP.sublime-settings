@@ -1,0 +1,11 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    // disable weird prompt appearing on save
+    "auto_show_diagnostics_panel": "never",
+    "clients": {
+        "rust-analyzer": { "enabled": false },
+        "rlang": { "enabled": false }
+    },
+    // https://github.com/jfcherng-sublime/LSP/tree/feat/allow-disable-codeAction
+    "disabled_capabilities": ["codeAction"]
+}

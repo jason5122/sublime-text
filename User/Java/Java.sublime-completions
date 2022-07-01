@@ -1,0 +1,54 @@
+{
+    "scope": "source.java",
+    "completions": [
+        {
+            "trigger": "sop",
+            "annotation": "System.out.print()",
+            "contents": "System.out.print(${1});${0}",
+            "kind": "snippet",
+            "details": "A print() template."
+        },
+        {
+            "trigger": "sopn",
+            "annotation": "System.out.println()",
+            "contents": "System.out.println(${1});${0}",
+            "kind": "snippet",
+            "details": "A println() template."
+        },
+        {
+            "trigger": "ps",
+            "annotation": "static method",
+            "contents": "public static ${1:void} ${2:methodName}(${3}) {\n\t${0}\n}",
+            "kind": "snippet",
+            "details": "A public static method template."
+        },
+        {
+            "trigger": "psvm",
+            "annotation": "main() method",
+            "contents": "public static void main(String[] args) {\n\t${0}\n}",
+            "kind": "snippet",
+            "details": "A main() method template."
+        },
+        {
+            "trigger": "cls",
+            "annotation": "class",
+            "contents": "class ${1:${TM_FILENAME/(.+).java/$1/}} {\n\t${0}\n}",
+            "kind": "snippet",
+            "details": "A class template."
+        },
+        {
+            "trigger": "n",
+            "annotation": "code snippet",
+            "contents": "new ${1:Object}(${2})${0}",
+            "kind": "snippet",
+            "details": "A template for a new Object declaration."
+        },
+        {
+            "trigger": "fr",
+            "annotation": "code snippet",
+            "contents": "for (int ${1:i} = ${2}; ${1} ${3}; ${1}++)",
+            "kind": "snippet",
+            "details": "A template for a for loop."
+        }
+    ]
+}

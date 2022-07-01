@@ -1,0 +1,14 @@
+[
+    {"caption": "-"},
+    { "command": "rename_file_context", "caption": "Rename File",
+        "args": { "group": -1, "index": -1 }
+    },
+    { "command": "delete_file_context", "caption": "Delete File",
+        "args": { "group": -1, "index": -1 }
+    },
+    {
+        "command": "open_dir",
+        "args": {"dir": "$file_path", "file": "$file_name"},
+        "caption": "Reveal in Finder"
+    }
+]

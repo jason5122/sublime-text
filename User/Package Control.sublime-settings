@@ -1,0 +1,42 @@
+{
+    "auto_upgrade": false,
+    "remove_orphaned": false,
+    "install_missing": false,
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "AutoDocstring",
+        "ayu",
+        "Bracketeer",
+        "ColorHelper",
+        "Delete Current File",
+        "EditorConfig",
+        "ExportHtml",
+        "FileIcons",
+        "Fmt",
+        "LSP",
+        "LSP-jdtls",
+        "LSP-pyright",
+        "MoveTab",
+        "NeoVintageous",
+        "Oceanic Next Color Scheme",
+        "Origami",
+        "OverrideAudit",
+        "Package Control",
+        "PackageDev",
+        "Project Specific Syntax Settings",
+        "ProjectSpecificKeys",
+        "Status Bar File Size",
+        "Terminal",
+        "Terminus",
+        "UnitTesting",
+    ],
+    "repositories":
+    [
+        "https://raw.githubusercontent.com/STealthy-and-haSTy/SublimePackages/master/unreleased-packages.json",
+        "https://github.com/SublimeText/PackageDev.git",
+    ],
+}

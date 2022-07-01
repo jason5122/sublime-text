@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+name: Build Output
+hidden: true
+scope: text.build_output
+contexts:
+  main:
+    - match: '\[Finished in \d+ms.*\]$'
+      scope: comment
+    - match: '\[Finished in \d+.\ds.*\]$'
+      scope: comment

@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "mit-scheme --quiet < \"${file}\"",
+    "selector": "source.scheme"
+}

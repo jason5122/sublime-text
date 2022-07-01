@@ -1,0 +1,19 @@
+{
+    "scope": "source.rust",
+    "completions": [
+        {
+            "trigger": "pn",
+            "annotation": "println!()",
+            "contents": "println!(\"${1}\", ${2});${0}",
+            "kind": "snippet",
+            "details": "A println!() template."
+        },
+        {
+            "trigger": "fnm",
+            "annotation": "main() function",
+            "contents": "fn main() {\n\t${0}\n}",
+            "kind": "snippet",
+            "details": "A main() function template."
+        }
+    ]
+}

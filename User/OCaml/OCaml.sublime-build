@@ -1,0 +1,12 @@
+{
+    "cmd": ["ocaml", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*), characters ([0-9]*)",
+    "selector": "source.ocaml",
+
+    "variants": [
+        {
+            "name": "Print inferred interface",
+            "cmd": ["ocamlc", "-i", "$file"]
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "cmd": ["racket", "$file"],
+    "file_regex": "^\\s*(...*?):([0-9]+):([0-9]+)",
+    "selector": "source.racket"
+}

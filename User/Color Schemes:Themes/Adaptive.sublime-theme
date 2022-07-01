@@ -1,0 +1,20 @@
+{
+    "rules": [
+        // Deprecated: these can now be changed in Preferences
+        // {
+        //     "class": "scroll_tabs_left_button",
+        //     "content_margin": 0,
+        //     "layer0.opacity": 0.0
+        // },
+        // {
+        //     "class": "scroll_tabs_right_button",
+        //     "content_margin": 0,
+        //     "layer0.opacity": 0.0
+        // },
+        {
+            "class": "show_tabs_dropdown_button",
+            "content_margin": 0,
+            "layer0.opacity": 0.0
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "cmd": ["dune", "build"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*), characters ([0-9]*)",
+    "keyfiles": ["dune-project"],
+
+    "working_dir": "$project_path",
+    "env": { "DUNE_PROFILE": "release" },
+
+    "variants": [
+        {
+            "name": "Test",
+            "cmd": ["dune", "test"]
+        },
+        {
+            "name": "Clean",
+            "cmd": ["dune", "clean"]
+        }
+    ]
+}
