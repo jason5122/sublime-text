@@ -1,18 +1,37 @@
 [
-    { "keys": ["super+shift+i"], "command": "replace_glitch" },
-    { "keys": ["super+j"], "command": "prev_view" },
-    { "keys": ["super+k"], "command": "next_view" },
+    // Edit Key Bindings
+    {
+        "keys": ["super+shift+,"],
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/Default/Default ($platform).sublime-keymap",
+            "default": "[\n\t$0\n]\n"
+        }
+    },
+    // Show Packages folder
+    {
+        "keys": ["ctrl+alt+p"],
+        "command": "open_dir",
+        "args": { "dir": "${packages}/User" }
+    },
+    { "keys": ["super+0"], "command": "toggle_side_bar" },
+    // Reveal in Finder
+    {
+        "keys": ["super+o"],
+        "command": "open_dir",
+        "args": { "dir": "$file_path", "file": "$file_name" }
+    },
+    // Reveal first sidebar folder in Finder
+    {
+        "keys": ["super+shift+o"],
+        "command": "open_dir",
+        "args": { "dir": "$folder" }
+    },
 
     { "keys": ["super+r"], "command": "rename_file" },
     {
         "keys": ["super+shift+backspace"],
         "command": "delete_current_file"
-    },
-
-    {
-        "keys": ["super+shift+m"],
-        "command": "expand_selection",
-        "args": { "to": "brackets" }
     },
 
     // Left delete exactly one character
@@ -27,29 +46,25 @@
         }
     },
 
-    // Default indent
-    {
-        "keys": ["super+i"],
-        "command": "reindent",
-        "args": { "single_line": false }
-    },
+    { "keys": ["ctrl+u"], "command": "browse_commands" },
+
     // Fmt
     // NOTE: this uses merge; implement diff using Google lib
     //       use Sublime AStyle Formatter as reference
     {
-        "keys": ["super+i"],
+        "keys": ["ctrl+i"],
         "command": "fmt_format_buffer",
         "context": [
             {
                 "key": "selector",
                 "operator": "equal",
-                "operand": "source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.pgsql, source.scheme, source.haskell, source.ocaml, source.objc, source.objc++"
+                "operand": "source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.pgsql, source.scheme, source.haskell, source.ocaml"
             }
         ]
     },
     // Custom clang-format plugin
     {
-        "keys": ["super+i"],
+        "keys": ["ctrl+i"],
         "command": "clang_format",
         "context": [
             {
@@ -59,349 +74,8 @@
             }
         ]
     },
-    // Indent XML
-    // NOTE: this moves your cursor even on no change :/
-    //       also this still "changes" the file and asks to save
-    //       even when same output
-    {
-        "keys": ["super+i"],
-        "command": "auto_indent",
-        "context": [
-            { "key": "selector", "operator": "equal", "operand": "text.xml" }
-        ]
-    },
-    // Reveal in Finder
-    {
-        "keys": ["super+o"],
-        "command": "open_dir",
-        "args": { "dir": "$file_path", "file": "$file_name" }
-    },
-    // Reveal first sidebar folder in Finder
-    {
-        "keys": ["super+shift+o"],
-        "command": "open_dir",
-        "args": { "dir": "$folder" }
-    },
-    // Use Replace as default instead of Find
-    {
-        "keys": ["super+f"],
-        "command": "show_panel",
-        "args": { "panel": "replace", "reverse": false }
-    },
-    // Edit key bindings
-    {
-        "keys": ["super+shift+,"],
-        "command": "edit_settings",
-        "args": {
-            "base_file": "${packages}/Default/Default ($platform).sublime-keymap",
-            "default": "[\n\t$0\n]\n"
-        }
-    },
-    // Show Build Results
-    // NOTE: toggle does not work because output panel never gains focus!
-    {
-        "keys": ["super+ctrl+b"],
-        "command": "show_panel",
-        "args": { "panel": "output.exec" }
-    },
-    // Hide Build Results if open
-    {
-        "keys": ["super+ctrl+b"],
-        "command": "hide_panel",
-        "context": [
-            { "key": "panel", "operand": "output.exec" },
-            { "key": "panel_visible", "operator": "equal", "operand": true }
-        ]
-    },
-    // Terminus tab at file directory
-    // {
-    //     "keys": ["super+e"],
-    //     "command": "terminus_open",
-    //     "args": {
-    //         "cwd": "${file_path:${folder}}",
-    //         "title": "Terminal (File)",
-    //         "pre_window_hooks": [
-    //             ["close_terminus_view", { "title": "Terminal (File)" }],
-    //             [
-    //                 "travel_to_pane",
-    //                 { "direction": "left", "create_new_if_necessary": false }
-    //             ],
-    //             ["create_pane", { "direction": "right", "give_focus": true }],
-    //             // make sure left pane can extend to 80 lines
-    //             ["zoom_pane", { "fraction": 0.45 }]
-    //         ]
-    //     }
-    // },
-    // Terminus tab at project directory
-    // {
-    //     "keys": ["super+shift+e"],
-    //     "command": "terminus_open",
-    //     "context": [
-    //         { "key": "project_active", "operator": "equal", "operand": true }
-    //     ],
-    //     "args": {
-    //         "cwd": "${folder}",
-    //         "title": "Terminal (Project)",
-    //         "pre_window_hooks": [
-    //             ["close_terminus_view", { "title": "Terminal (Project)" }],
-    //             [
-    //                 "travel_to_pane",
-    //                 { "direction": "left", "create_new_if_necessary": false }
-    //             ],
-    //             ["create_pane", { "direction": "right", "give_focus": true }],
-    //             // make sure left pane can extend to 80 lines
-    //             ["zoom_pane", { "fraction": 0.45 }]
-    //         ]
-    //     }
-    // },
-    // 2-14-22: better terminus open
-    // {
-    //     "keys": ["super+e"],
-    //     "command": "terminus_open",
-    //     "args": {
-    //         "post_window_hooks": [
-    //             ["carry_file_to_pane", {"direction": "down"}]
-    //         ]
-    //     }
-    // },
-    // Close Terminus tab
-    {
-        "keys": ["super+w"],
-        "command": "terminus_close",
-        "context": [{ "key": "terminus_view" }]
-    },
-    // Toggle Side Bar
-    { "keys": ["super+0"], "command": "toggle_side_bar" },
-    { "keys": ["super+shift+0"], "command": "toggle_tabs" },
-    // Scroll in overlay (e.g., Goto Anything)
-    {
-        "keys": ["tab"],
-        "command": "move",
-        "args": { "by": "lines", "forward": true },
-        "context": [
-            { "key": "overlay_visible", "operator": "equal", "operand": true }
-        ]
-    },
-    {
-        "keys": ["shift+tab"],
-        "command": "move",
-        "args": { "by": "lines", "forward": false },
-        "context": [
-            { "key": "overlay_visible", "operator": "equal", "operand": true }
-        ]
-    },
-    // Change keybinding later
-    { "keys": ["ctrl+s"], "command": "invert_selection" },
-    // Deselect
-    // {
-    //     "keys": ["escape"],
-    //     "command": "deselect",
-    //     "context": [
-    //         {
-    //             "key": "selection_empty",
-    //             "operator": "equal",
-    //             "operand": false,
-    //             "match_all": true
-    //         }
-    //     ]
-    // },
     // Scope View plugin
     { "keys": ["ctrl+shift+p"], "command": "toggle_scope_display" },
-    // AutoDocstring
-    {
-        "keys": ["super+quote"],
-        "command": "auto_docstring",
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "source.python"
-            }
-        ]
-    },
-    {
-        "keys": ["super+shift+quote"],
-        "command": "auto_docstring_all",
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "source.python"
-            }
-        ]
-    },
-    // DoxyDoxygen
-    {
-        "keys": ["super+quote"],
-        "command": "doxy_update_comments",
-        "args": { "reparse": false },
-        "context": [
-            { "key": "selector", "operator": "equal", "operand": "source.java" }
-        ]
-    },
-    // Debugger
-    {
-        "keys": ["super+ctrl+b"],
-        "command": "debugger",
-        "args": { "action": "start" }
-    },
-    // Ruler toggle
-    {
-        "keys": ["ctrl+i"],
-        "command": "toggle_setting_ext",
-        "args": { "setting": "rulers", "options": [[], [80]] }
-    },
-    // Delete empty line, like IntelliJ
-    // {
-    //     "keys": ["backspace"],
-    //     "command": "run_macro_file",
-    //     "args": {
-    //         "file": "res://Packages/User/Macros/Delete Empty Line.sublime-macro"
-    //     },
-    //     "context": [
-    //         {
-    //             // at least one space
-    //             "key": "preceding_text",
-    //             "operator": "regex_match",
-    //             // disable for fully empty lines (+ instead of *)
-    //             "operand": "^\\s+$"
-    //         },
-    //         {
-    //             "key": "following_text",
-    //             "operator": "regex_match",
-    //             "operand": "^\\s*$"
-    //         },
-    //         // disable for multi-cursor
-    //         { "key": "num_selections", "operator": "equal", "operand": 1 }
-    //     ]
-    // },
-    // Edge case: empty (but not fully empty) last line
-    // {
-    //     "keys": ["backspace"],
-    //     "command": "run_macro_file",
-    //     "args": {
-    //         "file": "res://Packages/User/Macros/Delete Empty Last Line.sublime-macro"
-    //     },
-    //     "context": [
-    //         {
-    //             "key": "preceding_text",
-    //             "operator": "regex_match",
-    //             // disable for fully empty lines (+ instead of *)
-    //             "operand": "^\\s*$"
-    //         },
-    //         {
-    //             "key": "following_text",
-    //             "operator": "regex_match",
-    //             "operand": "^\\s*$"
-    //         },
-    //         { "key": "last_line", "operator": "equal", "operand": true },
-    //         // disable for multi-cursor
-    //         { "key": "num_selections", "operator": "equal", "operand": 1 }
-    //     ]
-    // },
-    // Edge case: fully empty last line
-    // {
-    //     "keys": ["backspace"],
-    //     "command": "left_delete",
-    //     "context": [
-    //         {
-    //             "key": "preceding_text",
-    //             "operator": "regex_match",
-    //             "operand": "^$"
-    //         },
-    //         {
-    //             "key": "following_text",
-    //             "operator": "regex_match",
-    //             "operand": "^$"
-    //         },
-    //         { "key": "last_line", "operator": "equal", "operand": true }
-    //     ]
-    // },
-    // Don't move forward to BOL when past it
-    // Move to BOL means you could actually move right if you're past BOL
-    {
-        "keys": ["super+left"],
-        "command": "move_to",
-        "args": { "to": "hardbol" },
-        "context": [
-            {
-                "key": "preceding_text",
-                "operator": "regex_match",
-                "operand": "^\\s*$"
-            }
-        ]
-    },
-    //
-    // LSP stuff
-    //
-    // Show Code Actions
-    {
-        "command": "lsp_code_actions",
-        "keys": ["super+."],
-        "context": [
-            {
-                "key": "lsp.session_with_capability",
-                "operator": "equal",
-                "operand": "codeActionProvider"
-            }
-        ]
-    },
-    // Format Document
-    // NOTE: is only enabled when LSP is able to format
-    // WARNING: this went really buggy for jdtls once, maybe disable
-    // {
-    //     "command": "lsp_format_document",
-    //     "keys": ["super+i"],
-    //     "context": [
-    //         {
-    //             "key": "lsp.session_with_capability",
-    //             "operator": "equal",
-    //             "operand": "documentFormattingProvider | documentRangeFormattingProvider"
-    //         }
-    //     ]
-    // },
-    // Just to test minihtml
-    // TODO: remove this
-    // { "keys": ["super+shift+i"], "command": "bruh" },
-    // Backspace to BOL, not hard BOL
-    {
-        "keys": ["super+backspace"],
-        "command": "run_macro_file",
-        "args": { "file": "res://Packages/Default/Delete to BOL.sublime-macro" }
-    },
-    // Move to just before comments
-    // {
-    //     "keys": ["super+right"],
-    //     "command": "move_to_end_of_line_or_before_specified_scope",
-    //     "args": {
-    //         "scope": "punctuation.terminator.statement, comment",
-    //         "before_whitespace": true,
-    //         "eol_first": false,
-    //         "find_only_at_eol": false
-    //     }
-    // },
-    // // Don't move to just before comments when at EOL
-    // // You actually move to the left if you're at the EOL already
-    // {
-    //     "keys": ["super+right"],
-    //     "command": "move_to",
-    //     "args": { "to": "eol" },
-    //     "context": [
-    //         {
-    //             "key": "following_text",
-    //             "operator": "regex_match",
-    //             "operand": "^\\s*$"
-    //         }
-    //     ]
-    // },
-    // Move between panes
-    // {
-    //     "keys": ["ctrl+j"],
-    //     "command": "focus_neighboring_group",
-    //     "args": { "forward": false }
-    // },
-    // { "keys": ["ctrl+k"], "command": "focus_neighboring_group" },
-    { "keys": ["ctrl+u"], "command": "browse_commands" },
     // No single quote autocomplete in Racket and Scheme
     {
         "keys": ["'"],
@@ -415,17 +89,11 @@
             }
         ]
     },
-    // No underscore autocomplete in R Markdown
-    {
-        "keys": ["_"],
-        "command": "insert_snippet",
-        "args": { "contents": "_" },
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "text.html.markdown.rmarkdown"
-            }
-        ]
-    }
+
+    // Disabled default keybindings
+    { "keys": ["super+equals"], "command": "noop" },
+    { "keys": ["super+plus"], "command": "noop" },
+    { "keys": ["super+keypad_plus"], "command": "noop" },
+    { "keys": ["super+minus"], "command": "noop" },
+    { "keys": ["super+keypad_minus"], "command": "noop" },
 ]

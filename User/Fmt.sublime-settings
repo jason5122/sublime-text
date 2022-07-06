@@ -84,26 +84,6 @@
                 "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
             ]
         },
-        {
-            "selector": "source.objc",
-            "cmd": [
-                "clang-format",
-                "--assume-filename=file.m",
-                // TODO: find a way to use both style=file and style overrides
-                // "--style=file:$HOME/.config/clang-format/clang-format",
-                "--style={Language: ObjC, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-            ]
-        },
-        {
-            "selector": "source.objc++",
-            "cmd": [
-                "clang-format",
-                "--assume-filename=file.mm",
-                // TODO: find a way to use both style=file and style overrides
-                // "--style=file:$HOME/.config/clang-format/clang-format",
-                "--style={Language: ObjC, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-            ]
-        },
         // uncrustify was okay too
         // { "selector": "source.c", "cmd": ["uncrustify", "-q", "-l", "C"] },
         // { "selector": "source.c++", "cmd": ["uncrustify", "-q", "-l", "CPP"] },
@@ -193,7 +173,9 @@
             "cmd": [
                 "taplo",
                 "format",
-                "--config=$HOME/.config/taplo/taplo.toml",
+                "--silent",
+                "--config",
+                "$HOME/.config/taplo/taplo.toml",
                 "-"
             ]
         },

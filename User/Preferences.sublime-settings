@@ -1,167 +1,37 @@
 {
-    // Default themes
-    // "color_scheme": "Breakers.sublime-color-scheme", // Light
-    // "color_scheme": "Mariana.sublime-color-scheme", // Dark
-    // "color_scheme": "Monokai.sublime-color-scheme", // Middle
     "theme": "Adaptive.sublime-theme",
-
-    // Oceanic Next
-    // "color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
-
-    // Custom tests
-    // "color_scheme": "Packages/User/Color Schemes/Custom Light.sublime-color-scheme", // light
-    // "color_scheme": "Packages/User/Color Schemes/Custom Dark.sublime-color-scheme", // dark
-    // "color_scheme": "Packages/User/Color Schemes/Oceanic Next.sublime-color-scheme", // oceanic
-
     "color_scheme": "auto",
-    // "light_color_scheme": "Packages/User/Color Schemes/Ultimate Light.sublime-color-scheme", // ultimate light
-    // "dark_color_scheme": "Packages/User/Color Schemes/Ultimate Dark.sublime-color-scheme", // ultimate dark
-
-    // "font_face": "Fira Code",
-    // "font_face": "JetBrains Mono",
-    // "font_face": "SF Mono",
-    // "font_face": "Inconsolata",
-    // "font_face": "Menlo",
-    // "font_options": ["no_italic"],
     "font_face": "Source Code Pro",
     "font_size": 16,
 
     // Essential
+    "update_check": false,
     "drag_text": false,
     "copy_with_empty_selection": false,
     "shift_tab_unindent": true,
-    // "caret_style": "smooth", // Apparently drains more power
-    "open_files_in_new_window": false,
     "ensure_newline_at_eof_on_save": true,
     "auto_complete_commit_on_tab": true,
-    "update_check": false,
-
-    // Indentation (change if you need to follow preset coding styles)
-    "translate_tabs_to_spaces": true, // essentially: use spaces as default
-    // "detect_indentation": false,
-    "trim_automatic_white_space": false,
-
-    // Iffy about these, might change later
-    "show_tab_close_buttons_on_left": true, // Theme must support this
-    "fade_fold_buttons": false,
-    "trim_trailing_white_space_on_save": "not_on_caret",
-    "trim_only_modified_white_space": false,
-    "auto_complete_with_fields": true,
-    "spell_check": true,
-    "auto_complete_cycle": true,
-    "auto_complete_delay": 0,
-    "highlight_line": true,
-    "caret_extra_top": 2,
-    "caret_extra_bottom": 2,
+    "open_files_in_new_window": false,
     "scroll_past_end": true,
-    "auto_complete_preserve_order": "none", // perfect matches always at the top
-    "preview_on_click": "only_left", // don't preview on side bar right click
-    "show_encoding": true,
-    "bold_folder_labels": true,
-    "always_show_minimap_viewport": true,
     "close_windows_when_empty": false,
+    "auto_complete_with_fields": true,
+    "preview_on_click": "only_left",
+    "spell_check": true,
+    "use_find_clipboard": false,
+    "bold_folder_labels": true,
+    "translate_tabs_to_spaces": true, // use spaces as default
+    "spelling_selector": "comment - (keyword | variable), text.plain",
+    "auto_complete_preserve_order": "none",
 
-    "close_deleted_files": false,
-
-    "highlight_modified_tabs": true,
-
-    // For fun (not for serious work)
-    "mini_auto_complete": true,
-
-    // GUI stuff
+    // GUI
     "hide_tab_scrolling_buttons": true,
     "hide_new_tab_button": true,
     "show_sidebar_button": false,
     "animation_enabled": false,
 
-    // Distraction Free mode simulator
-    // yes there are duplicate settings
+    // Distraction Free Mode simulator
     "draw_centered": true,
     "word_wrap": true,
     "wrap_width": 80,
     "rulers": [0, 80],
-
-    // only spell check comments
-    // TODO: spell check other stuff like markup, plain text, etc.
-    // TODO: spell check strings, LaTeX text, etc.
-    // TODO: better dictionary: whitespace, viewport, etc. are seen as wrong
-    "spelling_selector": "comment - (keyword | variable), text.plain",
-
-    // LSP stuff
-    // "auto_complete_use_index": false, // try not to interfere
-    "ignored_snippets": [
-        "Java/Snippets/*",
-        "Python/Snippets/*",
-        "C++/Snippets/*",
-        "JavaScript/Snippets/*",
-        "ShellScript/Snippets/*",
-        "Rust/Snippets/*"
-    ],
-
-    // draw (leading) indentation that does not match the style
-    // draw random tabs in the middle of text
-    // draw trailing whitespace
-    // still displays all white space on selection (default)
-    "draw_white_space": [
-        "leading_mixed",
-        "isolated_mixed",
-        "enclosed_tabs",
-        "trailing",
-        "selection"
-    ],
-
-    // situational
-    // you can place this in syntax specific settings
-    // "rulers": [80],
-
-    "file_exclude_patterns": [
-        "*.pyc",
-        "*.pyo",
-        "*.exe",
-        "*.dll",
-        "*.obj",
-        "*.o",
-        "*.a",
-        "*.lib",
-        "*.so",
-        "*.ncb",
-        "*.suo",
-        "*.pdb",
-        "*.idb",
-        ".DS_Store",
-        ".directory",
-        "desktop.ini",
-        "*.class",
-        "*.psd",
-        "*.db",
-        "*.sublime-workspace",
-        // custom
-        "Cargo.lock"
-    ],
-
-    "folder_exclude_patterns": [
-        ".svn",
-        ".git",
-        ".hg",
-        "CVS",
-        ".Trash",
-        ".Trash-*",
-        "target",
-        ".pytest_cache",
-        "__pycache__"
-    ],
-    // disable JavaScript when using Babel
-    // disable Python when using MagicPython
-    // auto-dark fucks with manual changes
-    // turns out jdtls is kinda slow...
-    "ignored_packages": [
-        "ColorHelper",
-        "LSP",
-        // "ColorHelper",
-        "LSP-jdtls",
-        "NeoVintageous",
-        "Vintage",
-    ],
-
-    "console_max_history_lines": 3000,
 }

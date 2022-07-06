@@ -1,7 +1,0 @@
-// Settings in here override those in "LSP-jdtls/LSP-jdtls.sublime-settings"
-{
-    "settings": {
-        "java.completion.maxResults": 5,
-        "java.completion.enabled": false
-    }
-}
