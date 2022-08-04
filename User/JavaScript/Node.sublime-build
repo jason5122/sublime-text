@@ -1,5 +1,6 @@
 {
     "cmd": ["node", "$file"],
-    "file_regex": "^(...*?):([0-9]*)",
+    // FIXME: regex can capture wrong info on successful output
+    // "file_regex": "^(...*?):([0-9]*)",
     "selector": "source.js"
 }

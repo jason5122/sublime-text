@@ -14,6 +14,8 @@
         "command": "open_dir",
         "args": { "dir": "${packages}/User" }
     },
+    { "keys": ["super+j"], "command": "prev_view" },
+    { "keys": ["super+k"], "command": "next_view" },
     { "keys": ["super+0"], "command": "toggle_side_bar" },
     // Reveal in Finder
     {
