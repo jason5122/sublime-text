@@ -41,6 +41,4 @@
   // Experimental
   "tab_size": 2,
   "sublime_merge_path": null,
-
-  "ignored_packages": ["Vintage"]
 }
