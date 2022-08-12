@@ -1,0 +1,4 @@
+[
+    { "keys": ["super+e"], "command": "open_terminal" },
+    { "keys": ["super+shift+e"], "command": "open_terminal_project_folder" }
+]
