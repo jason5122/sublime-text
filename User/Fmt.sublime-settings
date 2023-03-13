@@ -170,14 +170,7 @@
         },
         {
             "selector": "source.toml",
-            "cmd": [
-                "taplo",
-                "format",
-                "--silent",
-                "--config",
-                "$HOME/.config/taplo/taplo.toml",
-                "-"
-            ]
+            "cmd": ["taplo", "format", "-"]
         },
         { "selector": "source.shell.fish", "cmd": ["fish_indent"] },
         {
@@ -222,6 +215,18 @@
                 "--name",
                 "file.ml"
             ]
+        },
+        {
+            "selector": "source.go",
+            "cmd": ["gofmt"]
+        },
+        {
+            "selector": "source.ruby",
+            "cmd": ["rubyfmt", "--silence-update-message"]
+        },
+        {
+            "selector": "source.gn",
+            "cmd": ["gn", "format", "--stdin"]
         }
     ],
     // replaces tabs with spaces

@@ -34,7 +34,18 @@ class ClangFormatCommand(sublime_plugin.TextCommand):
             "Language": language,
             "IndentWidth": tab_size,
             "TabWidth": tab_size,
-            "BasedOnStyle": "Google",
+            # "BasedOnStyle": "Google",
+            "ColumnLimit": 79,  # TODO: evaluate if this is hacky or not
+            # Custom options
+            "AllowShortBlocksOnASingleLine": "Empty",
+            "AllowShortFunctionsOnASingleLine": "Empty",
+            "AllowShortIfStatementsOnASingleLine": "AllIfsAndElse",
+            "AllowShortLoopsOnASingleLine": True,
+            # "InsertBraces": True,
+            "SpacesBeforeTrailingComments": 2,
+            "AccessModifierOffset": -tab_size,
+            "PointerAlignment": "Left",
+            "AlignTrailingComments": True,
         }
         if not use_spaces:
             style['UseTab'] = 'ForIndentation'
@@ -93,5 +104,11 @@ def get_language_from_scope(scope) -> Tuple[Optional[str], Optional[str]]:
         return ('Cpp', 'file.c')
     elif scope == 'source.java':
         return ('Java', 'file.java')
+    elif scope == 'source.objc':
+        return ('ObjC', 'file.m')
+    elif scope == 'source.objc++':
+        return ('ObjC', 'file.mm')
+    elif scope == 'source.glsl':
+        return ('Cpp', 'file.glsl')
     else:
         return (None, None)  # no language found

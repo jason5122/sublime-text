@@ -1,20 +1,20 @@
 {
-  "rules": [
-    {
-      "scope": "entity.name.function",
-      "font_style": "glow"
-    },
-    {
-      "scope": "constant.language",
-      "font_style": "italic glow"
-    },
-    {
-      "scope": "variable.language",
-      "font_style": "italic glow"
-    },
-    {
-      "scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
-      "font_style": "bold"
-    }
-  ]
+  // "rules": [
+  //   {
+  //     "scope": "entity.name.function",
+  //     "font_style": "glow"
+  //   },
+  //   {
+  //     "scope": "constant.language",
+  //     "font_style": "italic glow"
+  //   },
+  //   {
+  //     "scope": "variable.language",
+  //     "font_style": "italic glow"
+  //   },
+  //   {
+  //     "scope": "entity.name - (entity.name.section | entity.name.tag | entity.name.label)",
+  //     "font_style": "bold"
+  //   }
+  // ]
 }

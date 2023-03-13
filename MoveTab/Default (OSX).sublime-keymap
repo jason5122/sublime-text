@@ -1,12 +1,12 @@
 [
-    {
-        "keys": ["super+shift+j"],
-        "command": "move_tab",
-        "args": { "steps": -1 }
-    },
-    {
-        "keys": ["super+shift+k"],
-        "command": "move_tab",
-        "args": { "steps": 1 }
-    }
+  {
+    "keys": ["super+shift+j"],
+    "command": "move_tab",
+    "args": { "steps": -1 }
+  },
+  {
+    "keys": ["super+shift+k"],
+    "command": "move_tab",
+    "args": { "steps": 1 }
+  }
 ]

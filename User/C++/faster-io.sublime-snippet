@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+]]></content>
+    <description>Faster I/O</description>
+    <tabTrigger>ios</tabTrigger>
+    <scope>source.c++</scope>
+</snippet>

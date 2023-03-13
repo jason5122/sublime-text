@@ -1,0 +1,16 @@
+import sublime
+import sublime_plugin
+
+
+class ExtendedEmptyCopyPasteEventListener(sublime_plugin.EventListener):
+    """
+    Every time the cut or copy commands are executed in a file while all of the
+    selections are empty, trim away the trailing newlines on the copied lines.
+    """
+
+    def on_post_text_command(self, view, cmd, args):
+        # If copy or cut was just executed and every selection in the view was
+        # empty, trigger our logic.
+        if cmd in ("copy", "cut") and all([len(s) == 0 for s in view.sel()]):
+            text = sublime.get_clipboard().split('\n')
+            sublime.set_clipboard("\n".join([t for t in text if t != ""]))

@@ -1,7 +1,22 @@
-[
-    {
-        "class": "show_tabs_dropdown_button",
-        "content_margin": 0,
-        "layer0.opacity": 0.0
-    }
-]
+// [
+//     {
+//         "class": "show_tabs_dropdown_button",
+//         "content_margin": 0,
+//         "layer0.opacity": 0.0
+//     }
+// ]
+
+{
+    "variables": {
+        // "font_face": "Source Code Pro"
+        // "font_face": "SF Pro Text"
+        // "font_face": "system"
+    },
+    "rules": [
+        {
+            "class": "show_tabs_dropdown_button",
+            "content_margin": 0,
+            "layer0.opacity": 0.0
+        }
+    ]
+}

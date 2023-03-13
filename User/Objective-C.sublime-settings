@@ -1,0 +1,5 @@
+// These settings override both User and Default settings for the Objective-C syntax
+{
+  "tab_size": 4,
+  "detect_indentation": false
+}

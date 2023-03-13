@@ -1,0 +1,17 @@
+%YAML 1.2
+---
+name: Cython
+scope: source.python.cython
+extends: Packages/Python/Python.sublime-syntax
+
+file_extensions:
+  - pyx
+
+contexts:
+  imports:
+    - meta_prepend: true
+    - match: \b(cimport)\b
+      scope: keyword.control.import.python
+      push:
+        - imports-import-body
+        - expect-absolute-import

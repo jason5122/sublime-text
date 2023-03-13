@@ -1,13 +1,15 @@
 {
   "theme": "Adaptive.sublime-theme",
-  "color_scheme": "auto",
+  "color_scheme": "Monokai.sublime-color-scheme",
+  "color_scheme": "Mariana.sublime-color-scheme",
+  // "color_scheme": "auto",
   "font_face": "Source Code Pro",
+  // "font_face": "SF Pro Text",
   "font_size": 16,
 
   // Essential
   "update_check": false,
   "drag_text": false,
-  "copy_with_empty_selection": false,
   "shift_tab_unindent": true,
   "ensure_newline_at_eof_on_save": true,
   "auto_complete_commit_on_tab": true,
@@ -30,10 +32,10 @@
   "animation_enabled": false,
 
   // Distraction Free Mode simulator
-  "draw_centered": true,
-  "word_wrap": true,
-  "wrap_width": 80,
-  "rulers": [0, 80],
+  // "draw_centered": true,
+  // "word_wrap": true,
+  // "wrap_width": 80,
+  // "rulers": [0, 80],
 
   // Settings for SublimeLinter
   "show_definitions": false,
@@ -41,4 +43,29 @@
   // Experimental
   "tab_size": 2,
   "sublime_merge_path": null,
+  // "themed_title_bar": false,
+  // "native_tabs": "disabled",
+  // "gutter": false,
+  // "word_wrap": false,
+  "show_spelling_errors": false,
+  // "themed_title_bar": false,
+  "rulers": [80],
+  // "draw_indent_guides": false,
+
+  // LeetCode practice
+  // "auto_complete": false,
+
+  // Just for fun: regular editor settings (like Google Docs)
+  // "font_face": "Times New Roman",
+  // "font_size": 18,
+  // "wrap_width": 60,
+  // "rulers": [],
+
+  // Vim practice
+  // "ignored_packages": [],
+  // "vintage_start_in_command_mode": true,
+  // "relative_line_numbers": true,
+  // "vintage_ctrl_keys": true,
+
+  "ignored_packages": ["Status Bar File Size", "Vintage"]
 }

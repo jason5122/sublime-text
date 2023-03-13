@@ -1,0 +1,4 @@
+{
+    "cmd": ["sbcl", "--script", "$file"],
+    "selector": "source.lisp"
+}

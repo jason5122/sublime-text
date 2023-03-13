@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+#include "debugging.h"
+]]></content>
+    <description>debugging.h</description>
+    <tabTrigger>dbg</tabTrigger>
+    <scope>source.c++</scope>
+</snippet>
