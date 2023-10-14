@@ -1,0 +1,11 @@
+sublime_lib/
+wcmatch/
+backrefs/
+bracex/
+lsp_utils/
+mdpopups/
+pygments/
+pymdownx/
+python-markdown/
+pathlib/
+pyyaml/

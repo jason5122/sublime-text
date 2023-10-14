@@ -35,7 +35,8 @@ class ClangFormatCommand(sublime_plugin.TextCommand):
             "IndentWidth": tab_size,
             "TabWidth": tab_size,
             # "BasedOnStyle": "Google",
-            "ColumnLimit": 79,  # TODO: evaluate if this is hacky or not
+            # "ColumnLimit": 79,  # TODO: evaluate if this is hacky or not
+            "ColumnLimit": 99,  # TODO: evaluate if this is hacky or not
             # Custom options
             "AllowShortBlocksOnASingleLine": "Empty",
             "AllowShortFunctionsOnASingleLine": "Empty",

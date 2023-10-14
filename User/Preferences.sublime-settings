@@ -1,7 +1,6 @@
 {
   "theme": "Adaptive.sublime-theme",
-  "color_scheme": "Monokai.sublime-color-scheme",
-  "color_scheme": "Mariana.sublime-color-scheme",
+  "color_scheme": "BreakersGlowy.sublime-color-scheme",
   // "color_scheme": "auto",
   "font_face": "Source Code Pro",
   // "font_face": "SF Pro Text",
@@ -16,13 +15,12 @@
   "open_files_in_new_window": false,
   "scroll_past_end": true,
   "close_windows_when_empty": false,
-  "auto_complete_with_fields": true,
+  // "auto_complete_with_fields": true,
   "preview_on_click": "only_left",
   "spell_check": true,
   "use_find_clipboard": false,
   "bold_folder_labels": true,
   "translate_tabs_to_spaces": true, // use spaces as default
-  "spelling_selector": "comment - (keyword | variable), text.plain, markup.heading, meta.paragraph.markdown",
   "auto_complete_preserve_order": "none",
 
   // GUI
@@ -49,8 +47,18 @@
   // "word_wrap": false,
   "show_spelling_errors": false,
   // "themed_title_bar": false,
-  "rulers": [80],
+  // "rulers": [80],
+  "rulers": [100],
   // "draw_indent_guides": false,
+  // "spelling_selector": "comment - (keyword | variable), text.plain, markup.heading, meta.paragraph.markdown",
+  "spelling_selector": "comment - (keyword | variable), markup.heading, meta.paragraph - meta.link",
+  // "open_files_in_new_window": "finder_only",
+  // "font_options": ["no_italic"],
+  // "native_tabs": "preferred",
+  "mini_diff": "auto",
+  "wrap_width": 100,
+
+  "find_in_files_max_result_size": 1073741824, // 1GiB
 
   // LeetCode practice
   // "auto_complete": false,
@@ -67,5 +75,5 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Status Bar File Size", "Vintage"]
+  "ignored_packages": ["Vintage"]
 }

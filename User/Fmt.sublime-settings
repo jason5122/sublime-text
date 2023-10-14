@@ -1,234 +1,273 @@
 // Fmt Settings - User
 {
-    "format_on_save": false,
-    "timeout": 5,
-    "rules": [
-        // {
-        //     "selector": "source.json, text.json",
-        //     "cmd": ["jsonfmt", "-i", "$indent"]
-        // },
-        {
-            "selector": "source.json, text.json",
-            "cmd": ["prettier", "--parser=json", "--tab-width", "$tab_size"]
-        },
-        {
-            "selector": "source.yaml",
-            "cmd": ["yamlfmt", "--indent", "$tab_size"]
-        },
-        {
-            "selector": "source.python",
-            "cmd": [
-                "black",
-                "--line-length",
-                "80",
-                "--quiet",
-                "--skip-string-normalization",
-                "--fast",
-                "-"
-            ]
-        },
+  "format_on_save": false,
+  "timeout": 5,
+  "rules": [
+    // {
+    //     "selector": "source.json, text.json",
+    //     "cmd": ["jsonfmt", "-i", "$indent"]
+    // },
+    // {
+    //     "selector": "source.json, text.json",
+    //     "cmd": ["prettier", "--parser=json", "--tab-width", "$tab_size"]
+    // },
+    {
+      "selector": "source.json, text.json",
+      "cmd": [
+        "dprint",
+        "fmt",
+        "--config=$HOME/.config/dprint/dprint.json",
+        "--stdin=.json"
+      ]
+    },
+    {
+      "selector": "source.yaml",
+      "cmd": ["yamlfmt", "--indent", "$tab_size"]
+    },
+    {
+      "selector": "source.python",
+      "cmd": [
+        "black",
+        "--line-length",
+        "100",
+        "--quiet",
+        "--skip-string-normalization",
+        "--fast",
+        "-"
+      ]
+    },
 
-        // options are here:
-        // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-        {
-            "selector": "source.java",
-            "cmd": [
-                "clang-format",
-                "--assume-filename=file.java",
-                "--style={Language: Java, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-            ]
-        },
-        // uncrustify was decent, but you had to choose between add/remove
-        // {
-        //     "selector": "source.java",
-        //     "cmd": ["uncrustify", "-q", "-l", "JAVA"]
-        // },
+    // options are here:
+    // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+    {
+      "selector": "source.java",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.java",
+        "--style={Language: Java, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+      ]
+    },
+    // uncrustify was decent, but you had to choose between add/remove
+    // {
+    //     "selector": "source.java",
+    //     "cmd": ["uncrustify", "-q", "-l", "JAVA"]
+    // },
 
-        // astyle is faster for large files I think
-        // {
-        //     "selector": "source.java",
-        //     "cmd": [
-        //         "astyle",
-        //         "--mode=java",
-        //         "--indent=tab",
-        //         "--style=attach",
-        //         "--add-braces",
-        //         "--pad-oper",
-        //         "--pad-comma",
-        //         "--unpad-paren",
-        //         "--pad-header",
-        //         "--indent-switches",
-        //         "--fill-empty-lines"
-        //     ]
-        // },
+    // astyle is faster for large files I think
+    // {
+    //     "selector": "source.java",
+    //     "cmd": [
+    //         "astyle",
+    //         "--mode=java",
+    //         "--indent=tab",
+    //         "--style=attach",
+    //         "--add-braces",
+    //         "--pad-oper",
+    //         "--pad-comma",
+    //         "--unpad-paren",
+    //         "--pad-header",
+    //         "--indent-switches",
+    //         "--fill-empty-lines"
+    //     ]
+    // },
 
-        // options are here:
-        // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-        // "Language: Cpp" setting is also used for C:
-        // https://stackoverflow.com/q/60491612/14698275
-        {
-            "selector": "source.c",
-            "cmd": [
-                "clang-format",
-                "--assume-filename=file.c",
-                "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-            ]
-        },
-        {
-            "selector": "source.c++",
-            "cmd": [
-                "clang-format",
-                "--assume-filename=file.cpp",
-                // TODO: find a way to use both style=file and style overrides
-                // "--style=file:$HOME/.config/clang-format/clang-format",
-                "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-            ]
-        },
-        // uncrustify was okay too
-        // { "selector": "source.c", "cmd": ["uncrustify", "-q", "-l", "C"] },
-        // { "selector": "source.c++", "cmd": ["uncrustify", "-q", "-l", "CPP"] },
+    // options are here:
+    // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+    // "Language: Cpp" setting is also used for C:
+    // https://stackoverflow.com/q/60491612/14698275
+    {
+      "selector": "source.c",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.c",
+        "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+      ]
+    },
+    {
+      "selector": "source.c++",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.cpp",
+        // TODO: find a way to use both style=file and style overrides
+        // "--style=file:$HOME/.config/clang-format/clang-format",
+        "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+      ]
+    },
+    // uncrustify was okay too
+    // { "selector": "source.c", "cmd": ["uncrustify", "-q", "-l", "C"] },
+    // { "selector": "source.c++", "cmd": ["uncrustify", "-q", "-l", "CPP"] },
 
-        // astyle
-        // {
-        //     "selector": "source.c, source.c++",
-        //     "cmd": [
-        //         "astyle",
-        //         "--mode=c",
-        //         "--indent=tab",
-        //         "--style=attach",
-        //         "--add-braces",
-        //         "--pad-oper",
-        //         "--pad-comma",
-        //         "--unpad-paren",
-        //         "--pad-header",
-        //         "--indent-switches",
-        //         "--fill-empty-lines"
-        //     ]
-        // },
-        {
-            "selector": "text.tex.latex",
-            "cmd": [
-                "latexindent.pl",
-                "--cruft=/Users/jason/Library/Logs/latexindent",
-                "-"
-            ]
-        },
+    // astyle
+    // {
+    //     "selector": "source.c, source.c++",
+    //     "cmd": [
+    //         "astyle",
+    //         "--mode=c",
+    //         "--indent=tab",
+    //         "--style=attach",
+    //         "--add-braces",
+    //         "--pad-oper",
+    //         "--pad-comma",
+    //         "--unpad-paren",
+    //         "--pad-header",
+    //         "--indent-switches",
+    //         "--fill-empty-lines"
+    //     ]
+    // },
+    {
+      "selector": "text.tex.latex",
+      "cmd": [
+        "latexindent.pl",
+        "--cruft=/Users/jason/Library/Logs/latexindent",
+        "-"
+      ]
+    },
 
-        {
-            "selector": "text.html",
-            "cmd": [
-                "js-beautify",
-                "--type=html",
-                "--indent-with-tabs",
-                "--end-with-newline"
-            ]
-        },
+    {
+      "selector": "text.html",
+      "cmd": [
+        "js-beautify",
+        "--type=html",
+        "--indent-with-tabs",
+        "--end-with-newline"
+      ]
+    },
 
-        // {
-        //     "selector": "source.js",
-        //     "cmd": [
-        //         "js-beautify",
-        //         "--type=js",
-        //         "--indent-with-tabs",
-        //         "--end-with-newline"
-        //     ]
-        // },
+    // {
+    //     "selector": "source.js",
+    //     "cmd": [
+    //         "js-beautify",
+    //         "--type=js",
+    //         "--indent-with-tabs",
+    //         "--end-with-newline"
+    //     ]
+    // },
 
-        {
-            "selector": "source.js",
-            "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".js"]
-        },
+    {
+      "selector": "source.js",
+      "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".js"]
+    },
 
-        {
-            "selector": "source.css",
-            "cmd": [
-                "js-beautify",
-                "--type=css",
-                "--indent-with-tabs",
-                "--end-with-newline"
-            ]
-        },
-        { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
-        { "selector": "source.rust", "cmd": ["rustfmt"] },
-        {
-            "selector": "source.ts",
-            "cmd": [
-                "prettier",
-                "--parser=typescript",
-                "--tab-width",
-                "$tab_size",
-                "--config=$HOME/.config/prettier/.prettierrc.json"
-            ]
-        },
-        {
-            "selector": "source.tsx",
-            "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".tsx"]
-        },
-        {
-            "selector": "source.jsx",
-            "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".jsx"]
-        },
-        {
-            "selector": "source.toml",
-            "cmd": ["taplo", "format", "-"]
-        },
-        { "selector": "source.shell.fish", "cmd": ["fish_indent"] },
-        {
-            "selector": "source.cmake",
-            // why does tab-size=4 work lol
-            "cmd": [
-                "cmake-format",
-                "--tab-size=4",
-                "--use-tabchars=True",
-                "--dangle-parens=True",
-                "-"
-            ]
-        },
-        { "selector": "source.racket", "cmd": ["scmindent"] },
-        { "selector": "source.terraform", "cmd": ["terraform", "fmt", "-"] },
-        {
-            "selector": "source.r",
-            "cmd": ["styler.R", "$tab_size"]
-        },
-        // alternative to styler
-        // {
-        //     "selector": "source.r",
-        //     "cmd": ["formatR.R", "$tab_size"]
-        // }
-        {
-            "selector": "source.pgsql",
-            "cmd": ["sql-formatter", "-l=postgresql", "--tab-indent"]
-        },
-        { "selector": "source.scheme", "cmd": ["scmindent"] },
+    {
+      "selector": "source.css",
+      "cmd": [
+        "js-beautify",
+        "--type=css",
+        "--indent-with-tabs",
+        "--end-with-newline"
+      ]
+    },
+    { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
+    { "selector": "source.rust", "cmd": ["rustfmt"] },
+    {
+      "selector": "source.ts",
+      "cmd": [
+        "prettier",
+        "--parser=typescript",
+        "--tab-width",
+        "$tab_size",
+        "--config=$HOME/.config/prettier/.prettierrc.json"
+      ]
+    },
+    {
+      "selector": "source.tsx",
+      "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".tsx"]
+    },
+    {
+      "selector": "source.jsx",
+      "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".jsx"]
+    },
+    {
+      "selector": "source.toml",
+      "cmd": ["taplo", "format", "-"]
+    },
+    { "selector": "source.shell.fish", "cmd": ["fish_indent"] },
+    {
+      "selector": "source.cmake",
+      // why does tab-size=4 work lol
+      "cmd": [
+        "cmake-format",
+        "--tab-size=4",
+        "--use-tabchars=True",
+        "--dangle-parens=True",
+        "-"
+      ]
+    },
+    { "selector": "source.racket", "cmd": ["scmindent"] },
+    { "selector": "source.terraform", "cmd": ["terraform", "fmt", "-"] },
+    {
+      "selector": "source.r",
+      "cmd": ["styler", "$tab_size"]
+    },
+    // alternative to styler
+    // {
+    //     "selector": "source.r",
+    //     "cmd": ["formatR.R", "$tab_size"]
+    // }
+    {
+      "selector": "source.pgsql",
+      "cmd": ["sql-formatter", "-l=postgresql", "--tab-indent"]
+    },
+    { "selector": "source.scheme", "cmd": ["scmindent"] },
 
-        // uses custom build
-        // I made an issue to add the option to suppress stderr
-        // https://github.com/fourmolu/fourmolu/issues/104
-        { "selector": "source.haskell", "cmd": ["fourmolu"] },
-        // { "selector": "source.haskell", "cmd": ["ormolu"] },
-        {
-            "selector": "source.ocaml",
-            "cmd": [
-                "ocamlformat",
-                "--enable-outside-detected-project",
-                "-",
-                "--name",
-                "file.ml"
-            ]
-        },
-        {
-            "selector": "source.go",
-            "cmd": ["gofmt"]
-        },
-        {
-            "selector": "source.ruby",
-            "cmd": ["rubyfmt", "--silence-update-message"]
-        },
-        {
-            "selector": "source.gn",
-            "cmd": ["gn", "format", "--stdin"]
-        }
-    ],
-    // replaces tabs with spaces
-    "merge_type": "replace"
+    // uses custom build
+    // I made an issue to add the option to suppress stderr
+    // https://github.com/fourmolu/fourmolu/issues/104
+    { "selector": "source.haskell", "cmd": ["fourmolu"] },
+    // { "selector": "source.haskell", "cmd": ["ormolu"] },
+    {
+      "selector": "source.ocaml",
+      "cmd": [
+        "ocamlformat",
+        "--enable-outside-detected-project",
+        "-",
+        "--name",
+        "file.ml"
+      ]
+    },
+    {
+      "selector": "source.go",
+      "cmd": ["gofmt"]
+    },
+    {
+      "selector": "source.ruby",
+      "cmd": ["rubyfmt", "--silence-update-message"]
+    },
+    {
+      "selector": "source.gn",
+      "cmd": ["gn", "format", "--stdin"]
+    },
+    { "selector": "source.lisp", "cmd": ["scmindent"] },
+    {
+      "selector": "source.swift",
+      "cmd": [
+        "swift-format",
+        "--configuration=$HOME/.config/swift-format/config.json"
+      ]
+    },
+    {
+      "selector": "text.html.markdown",
+      "cmd": [
+        "dprint",
+        "fmt",
+        "--config=$HOME/.config/dprint/dprint.json",
+        "--stdin=.md"
+      ]
+    },
+    {
+      "selector": "source.dockerfile",
+      "cmd": [
+        "dprint",
+        "fmt",
+        "--config=$HOME/.config/dprint/dprint.json",
+        "--stdin=Dockerfile"
+      ]
+    },
+    {
+      "selector": "source.sql",
+      "cmd": ["sleek", "--indent-spaces=$tab_size"]
+    }
+  ],
+  // replaces tabs with spaces
+  "merge_type": "replace"
 }

@@ -1,0 +1,13 @@
+{
+  "shell_cmd": "quarto render \"${file}\"",
+  "selector": "text.html.markdown.quarto",
+
+  "hide_after_success": true,
+
+  "variants": [
+    {
+      "name": "PDF",
+      "shell_cmd": "quarto render \"${file}\" --to pdf && open \"$file_base_name\".pdf"
+    }
+  ]
+}

@@ -23,6 +23,8 @@
         "LSP",
         "LSP-jdtls",
         "LSP-pyright",
+        "LSP-typescript",
+        "MarkdownPreview",
         "MoveTab",
         "NeoVintageous",
         "Oceanic Next Color Scheme",

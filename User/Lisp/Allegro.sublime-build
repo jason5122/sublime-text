@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "./$file_name",
+    "selector": "source.lisp"
+}

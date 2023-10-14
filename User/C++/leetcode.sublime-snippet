@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+#include "debugging.h"
+#include "leetcode.h"
+using namespace std;
+
+int main() {
+    ${0}
+}
+
+]]></content>
+    <description>Leetcode template</description>
+    <tabTrigger>leet</tabTrigger>
+    <scope>source.c++</scope>
+</snippet>

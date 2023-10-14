@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+\begin{align*}
+  ${0}
+\end{align*}
+]]></content>
+    <description>LaTeX align*</description>
+    <tabTrigger>align</tabTrigger>
+    <scope>text.html.markdown.quarto</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+(format t "${1}~%"${0})
+]]></content>
+    <description>format</description>
+    <tabTrigger>fmt</tabTrigger>
+    <scope>source.lisp</scope>
+</snippet>

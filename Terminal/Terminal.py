@@ -5,22 +5,12 @@ import sys
 import subprocess
 import locale
 
-if os.name == 'nt':
-    try:
-        import _winreg
-    except (ImportError):
-        import winreg as _winreg
-    from ctypes import windll, create_unicode_buffer
-
 
 class NotFoundError(Exception):
     pass
 
 
-if sys.version_info >= (3,):
-    installed_dir, _ = __name__.split('.')
-else:
-    installed_dir = os.path.basename(os.getcwd())
+installed_dir, _ = __name__.split('.')
 
 
 def get_setting(key, default=None):
@@ -63,81 +53,10 @@ class TerminalSelector:
 
         default = None
 
-        if os.name == 'nt':
-            if os.path.exists(
-                os.environ['SYSTEMROOT']
-                + '\\System32\\WindowsPowerShell\\v1.0\\powershell.exe'
-            ):
-                # This mimics the default powershell colors since calling
-                # subprocess.POpen() ends up acting like launching powershell
-                # from cmd.exe. Normally the size and color are inherited
-                # from cmd.exe, but this creates a custom mapping, and then
-                # the LaunchPowerShell.bat file adjusts some other settings.
-                key_string = (
-                    'Console\\%SystemRoot%_system32_'
-                    + 'WindowsPowerShell_v1.0_powershell.exe'
-                )
-                try:
-                    key = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, key_string)
-                except (WindowsError):
-                    key = _winreg.CreateKey(
-                        _winreg.HKEY_CURRENT_USER, key_string
-                    )
-                    _winreg.SetValueEx(
-                        key, 'ColorTable05', 0, _winreg.REG_DWORD, 5645313
-                    )
-                    _winreg.SetValueEx(
-                        key, 'ColorTable06', 0, _winreg.REG_DWORD, 15789550
-                    )
-                default = os.path.join(package_dir, 'PS.bat')
-                sublime_terminal_path = os.path.join(
-                    sublime.packages_path(), installed_dir
-                )
-                # This should turn the path into an 8.3-style path, getting around unicode
-                # issues and spaces
-                buf = create_unicode_buffer(512)
-                if windll.kernel32.GetShortPathNameW(
-                    sublime_terminal_path, buf, len(buf)
-                ):
-                    sublime_terminal_path = buf.value
-                os.environ[
-                    'sublime_terminal_path'
-                ] = sublime_terminal_path.replace(' ', '` ')
-            else:
-                default = os.environ['SYSTEMROOT'] + '\\System32\\cmd.exe'
-
-        elif sys.platform == 'darwin':
+        if sys.platform == 'darwin':
             default = os.path.join(package_dir, 'Terminal.sh')
             if not os.access(default, os.X_OK):
                 os.chmod(default, 0o755)
-
-        else:
-            ps = (
-                'ps -eo comm,args | grep -E "^(gnome-session|ksmserver|'
-                + 'xfce4-session|lxsession|mate-panel|cinnamon-sessio)" | grep -v grep'
-            )
-            wm = [x.replace("\n", '') for x in os.popen(ps)]
-            if wm:
-                # elementary OS: `/usr/lib/gnome-session/gnome-session-binary --session=pantheon`
-                # Gnome: `gnome-session` or `gnome-session-binary`
-                # Linux Mint Cinnamon: `cinnamon-session --session cinnamon`
-                if wm[0].startswith('gnome-session') or wm[0].startswith(
-                    'cinnamon-sessio'
-                ):
-                    if 'pantheon' in wm[0]:
-                        default = 'pantheon-terminal'
-                    else:
-                        default = 'gnome-terminal'
-                elif wm[0].startswith('xfce4-session'):
-                    default = 'xfce4-terminal'
-                elif wm[0].startswith('ksmserver'):
-                    default = 'konsole'
-                elif wm[0].startswith('lxsession'):
-                    default = 'lxterminal'
-                elif wm[0].startswith('mate-panel'):
-                    default = 'mate-terminal'
-            if not default:
-                default = 'xterm'
 
         TerminalSelector.default = default
         return default
@@ -172,10 +91,7 @@ class TerminalCommand:
             args.extend(parameters)
 
             encoding = locale.getpreferredencoding(do_setlocale=True)
-            if sys.version_info >= (3,):
-                cwd = dir_
-            else:
-                cwd = dir_.encode(encoding)
+            cwd = dir_
 
             # Copy over environment settings onto parent environment
             env_setting = get_setting('env', {})
@@ -186,30 +102,17 @@ class TerminalCommand:
                 else:
                     env[k] = env_setting[k]
 
-            # Normalize environment settings for ST2
-            # https://github.com/wbond/sublime_terminal/issues/154
-            # http://stackoverflow.com/a/4987414
-            for k in env:
-                if not isinstance(env[k], str):
-                    if isinstance(env[k], unicode):
-                        env[k] = env[k].encode('utf8')
-                    else:
-                        print(
-                            'Unsupported environment variable type. Expected "str" or "unicode"',
-                            env[k],
-                        )
-
             # Run our process
             subprocess.Popen(args, cwd=cwd, env=env)
 
-        except (OSError) as exception:
+        except OSError as exception:
             print(str(exception))
             sublime.error_message(
                 'Terminal: The terminal '
                 + TerminalSelector.get()
                 + ' was not found'
             )
-        except (Exception) as exception:
+        except Exception as exception:
             sublime.error_message('Terminal: ' + str(exception))
 
 
