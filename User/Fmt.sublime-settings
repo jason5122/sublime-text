@@ -13,6 +13,8 @@
     { "selector": "source.toml", "cmd": ["dprint", "fmt", "--stdin=file.toml"] },
     { "selector": "source.python", "cmd": ["dprint", "fmt", "--stdin=file.py"] },
     { "selector": "source.sql", "cmd": ["dprint", "fmt", "--stdin=file.sql"] },
+    { "selector": "source.css", "cmd": ["dprint", "fmt", "--stdin=file.css"] },
+    { "selector": "text.html", "cmd": ["dprint", "fmt", "--stdin=file.html"] },
     { "selector": "text.html.svelte", "cmd": ["dprint", "fmt", "--stdin=file.svelte"] },
     // clang-format
     { "selector": "source.c", "cmd": ["clang-format", "--assume-filename=file.c"] },
@@ -21,25 +23,6 @@
     { "selector": "source.objc++", "cmd": ["clang-format", "--assume-filename=file.mm"] },
     { "selector": "source.glsl", "cmd": ["clang-format", "--assume-filename=file.glsl"] },
     { "selector": "source.java", "cmd": ["clang-format", "--assume-filename=file.java"] },
-    // js-beautify
-    {
-      "selector": "text.html",
-      "cmd": [
-        "js-beautify",
-        "--type=html",
-        "--indent-with-tabs",
-        "--end-with-newline"
-      ]
-    },
-    {
-      "selector": "source.css",
-      "cmd": [
-        "js-beautify",
-        "--type=css",
-        "--indent-with-tabs",
-        "--end-with-newline"
-      ]
-    },
     // scmindent
     { "selector": "source.lisp", "cmd": ["scmindent"] },
     { "selector": "source.scheme", "cmd": ["scmindent"] },
@@ -53,7 +36,7 @@
     { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
     { "selector": "source.swift", "cmd": ["swift-format", "--configuration=$HOME/.swift-format"] },
     { "selector": "text.tex.latex", "cmd": ["latexindent", "--cruft=$HOME/Library/Logs/latexindent", "-"] },
-    { "selector": "source.yaml", "cmd": ["yamlfmt", "--indent", "$tab_size"] },
+    { "selector": "source.yaml", "cmd": ["yamlfmt", "-"] },
     { "selector": "source.ruby", "cmd": ["rubyfmt", "--silence-update-message"] },
 
     { "selector": "source.shell.fish", "cmd": ["fish_indent"] },
