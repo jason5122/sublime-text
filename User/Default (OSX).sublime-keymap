@@ -67,10 +67,9 @@
       }
     ]
   },
-  // Custom clang-format plugin
   {
     "keys": ["ctrl+i"],
-    "command": "clang_format",
+    "command": "fmt_format_buffer",
     "context": [
       {
         "key": "selector",
@@ -79,6 +78,18 @@
       }
     ]
   },
+  // Custom clang-format plugin
+  // {
+  //   "keys": ["ctrl+i"],
+  //   "command": "clang_format",
+  //   "context": [
+  //     {
+  //       "key": "selector",
+  //       "operator": "equal",
+  //       "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl"
+  //     }
+  //   ]
+  // },
   // Scope View plugin
   { "keys": ["super+alt+p"], "command": "toggle_scope_display" },
   // No single quote autocomplete in Racket and Scheme

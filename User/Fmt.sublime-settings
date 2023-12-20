@@ -1,4 +1,3 @@
-// Fmt Settings - User
 {
   "format_on_save": false,
   "timeout": 5,
@@ -39,14 +38,14 @@
 
     // options are here:
     // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-    {
-      "selector": "source.java",
-      "cmd": [
-        "clang-format",
-        "--assume-filename=file.java",
-        "--style={Language: Java, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
-      ]
-    },
+    // {
+    //   "selector": "source.java",
+    //   "cmd": [
+    //     "clang-format",
+    //     "--assume-filename=file.java",
+    //     "--style={Language: Java, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+    //   ]
+    // },
     // uncrustify was decent, but you had to choose between add/remove
     // {
     //     "selector": "source.java",
@@ -79,18 +78,45 @@
       "selector": "source.c",
       "cmd": [
         "clang-format",
-        "--assume-filename=file.c",
-        "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+        "--assume-filename=file.c"
       ]
     },
     {
       "selector": "source.c++",
       "cmd": [
         "clang-format",
-        "--assume-filename=file.cpp",
+        "--assume-filename=file.cpp"
         // TODO: find a way to use both style=file and style overrides
         // "--style=file:$HOME/.config/clang-format/clang-format",
-        "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+        // "--style={Language: Cpp, UseTab: ForIndentation, IndentWidth: $tab_size, TabWidth: $tab_size, BasedOnStyle: Google}"
+      ]
+    },
+    {
+      "selector": "source.objc",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.m"
+      ]
+    },
+    {
+      "selector": "source.objc++",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.mm"
+      ]
+    },
+    {
+      "selector": "source.glsl",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.glsl"
+      ]
+    },
+    {
+      "selector": "source.java",
+      "cmd": [
+        "clang-format",
+        "--assume-filename=file.java"
       ]
     },
     // uncrustify was okay too
@@ -142,12 +168,23 @@
     //         "--end-with-newline"
     //     ]
     // },
-
+    // {
+    //   "selector": "source.js",
+    //   "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".js"]
+    // },
+    // {
+    //   "selector": "source.js",
+    //   "cmd": [
+    //     "dprint",
+    //     "fmt",
+    //     "--config=$HOME/.config/dprint/dprint.json",
+    //     "--stdin=.js"
+    //   ]
+    // },
     {
       "selector": "source.js",
-      "cmd": ["prettier", "--use-tabs", "--stdin-filepath", ".js"]
+      "cmd": ["prettier", "--stdin-filepath", ".js"]
     },
-
     {
       "selector": "source.css",
       "cmd": [
@@ -159,15 +196,19 @@
     },
     { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
     { "selector": "source.rust", "cmd": ["rustfmt"] },
+    // {
+    //   "selector": "source.ts",
+    //   "cmd": [
+    //     "prettier",
+    //     "--parser=typescript",
+    //     "--tab-width",
+    //     "$tab_size",
+    //     "--config=$HOME/.config/prettier/.prettierrc.json"
+    //   ]
+    // },
     {
       "selector": "source.ts",
-      "cmd": [
-        "prettier",
-        "--parser=typescript",
-        "--tab-width",
-        "$tab_size",
-        "--config=$HOME/.config/prettier/.prettierrc.json"
-      ]
+      "cmd": ["prettier", "--stdin-filepath", ".ts"]
     },
     {
       "selector": "source.tsx",

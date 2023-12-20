@@ -1,7 +1,9 @@
 {
   "theme": "Adaptive.sublime-theme",
-  "color_scheme": "BreakersGlowy.sublime-color-scheme",
-  // "color_scheme": "auto",
+  // "color_scheme": "BreakersGlowy.sublime-color-scheme",
+  "light_color_scheme": "BreakersGlowy.sublime-color-scheme",
+  "dark_color_scheme": "MarianaGlowy.sublime-color-scheme",
+  "color_scheme": "auto",
   "font_face": "Source Code Pro",
   // "font_face": "SF Pro Text",
   "font_size": 16,
@@ -75,5 +77,5 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Vintage"]
+  "ignored_packages": ["LSP-typescript", "Vintage"]
 }
