@@ -77,5 +77,6 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["LSP-typescript", "Vintage"]
+  "ignored_packages": ["LSP-typescript", "Vintage",
+  ],
 }
