@@ -23,16 +23,13 @@
     { "selector": "source.objc++", "cmd": ["clang-format", "--assume-filename=file.mm"] },
     { "selector": "source.glsl", "cmd": ["clang-format", "--assume-filename=file.glsl"] },
     { "selector": "source.java", "cmd": ["clang-format", "--assume-filename=file.java"] },
-    // scmindent
-    { "selector": "source.lisp", "cmd": ["scmindent"] },
-    { "selector": "source.scheme", "cmd": ["scmindent"] },
-    { "selector": "source.racket", "cmd": ["scmindent"] },
     // official formatters
     { "selector": "source.gn", "cmd": ["gn", "format", "--stdin"] },
     { "selector": "source.rust", "cmd": ["rustfmt"] },
     { "selector": "source.go", "cmd": ["gofmt"] },
     { "selector": "source.terraform", "cmd": ["terraform", "fmt", "-"] },
     // miscellaneous
+    { "selector": "source.lisp, source.scheme, source.racket", "cmd": ["scmindent"] },
     { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
     { "selector": "source.swift", "cmd": ["swift-format", "--configuration=$HOME/.swift-format"] },
     { "selector": "text.tex.latex", "cmd": ["latexindent", "--cruft=$HOME/Library/Logs/latexindent", "-"] },
