@@ -1,12 +1,9 @@
 {
   "theme": "Adaptive.sublime-theme",
-  // "color_scheme": "BreakersGlowy.sublime-color-scheme",
   "light_color_scheme": "BreakersGlowy.sublime-color-scheme",
   "dark_color_scheme": "MarianaGlowy.sublime-color-scheme",
   "color_scheme": "auto",
-  "font_face": "Source Code Pro",
-  // "font_face": "SF Pro Text",
-  "font_size": 16,
+  "font_size": 12,
 
   // Essential
   "update_check": false,
@@ -24,6 +21,8 @@
   "bold_folder_labels": true,
   "translate_tabs_to_spaces": true, // use spaces as default
   "auto_complete_preserve_order": "none",
+  "find_selected_text": false,
+  "hot_exit": "only_on_quit",
 
   // GUI
   "hide_tab_scrolling_buttons": true,
@@ -77,6 +76,5 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["LSP-typescript", "Vintage",
-  ],
+  "ignored_packages": ["LSP-typescript", "Vintage"],
 }
