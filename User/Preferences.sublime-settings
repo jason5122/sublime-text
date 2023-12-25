@@ -1,7 +1,7 @@
 {
   "theme": "Adaptive.sublime-theme",
-  "light_color_scheme": "BreakersGlowy.sublime-color-scheme",
-  "dark_color_scheme": "MarianaGlowy.sublime-color-scheme",
+  "light_color_scheme": "Breakers.sublime-color-scheme",
+  "dark_color_scheme": "Mariana.sublime-color-scheme",
   "color_scheme": "auto",
   "font_face": "Source Code Pro",
 
@@ -76,7 +76,6 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Vintage",
-  ],
-  "index_files": true,
+  "ignored_packages": ["Vintage"],
+  "index_files": true
 }
