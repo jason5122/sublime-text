@@ -1,4 +1,3 @@
-// These settings override both User and Default settings for the Build Output syntax
 {
-    "spell_check": false,
+  "spell_check": false
 }

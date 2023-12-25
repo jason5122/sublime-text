@@ -1,4 +1,4 @@
 {
-    "cmd": ["osascript", "$file"],
-    "selector": "source.applescript"
+  "cmd": ["osascript", "$file"],
+  "selector": "source.applescript"
 }

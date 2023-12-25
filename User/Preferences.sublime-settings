@@ -3,7 +3,7 @@
   "light_color_scheme": "BreakersGlowy.sublime-color-scheme",
   "dark_color_scheme": "MarianaGlowy.sublime-color-scheme",
   "color_scheme": "auto",
-  "font_size": 12,
+  "font_face": "Source Code Pro",
 
   // Essential
   "update_check": false,
@@ -76,5 +76,7 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["LSP-typescript", "Vintage"],
+  "ignored_packages": ["Vintage",
+  ],
+  "index_files": true,
 }
