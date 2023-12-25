@@ -76,6 +76,7 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Vintage"],
-  "index_files": true
+  "ignored_packages": ["Vintage",
+  ],
+  "index_files": true,
 }

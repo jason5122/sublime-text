@@ -9,7 +9,7 @@
     "GN",
     "Package Control",
     "PackageDev",
-    "Project Specific Syntax Settings",
-    "Terminal"
+    "RPM Spec Syntax",
+    "Terminal",
   ],
 }
