@@ -63,7 +63,7 @@
       {
         "key": "selector",
         "operator": "equal",
-        "operand": "source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql"
+        "operand": "source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql, source.lua"
       }
     ]
   },
@@ -158,5 +158,16 @@
     "keys": ["alt+n"],
     "command": "insert",
     "args": { "characters": "'\\n'" }
+  },
+
+  {
+    "keys": ["super+shift+j"],
+    "command": "move_tab",
+    "args": { "position": "-1" }
+  },
+  {
+    "keys": ["super+shift+k"],
+    "command": "move_tab",
+    "args": { "position": "+1" }
   }
 ]

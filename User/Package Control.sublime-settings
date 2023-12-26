@@ -1,5 +1,6 @@
 {
-  "in_process_packages": [],
+  "in_process_packages": [
+  ],
   "installed_packages": [
     "Delete Current File",
     "EditorConfig",
@@ -9,6 +10,8 @@
     "MoveTab",
     "Package Control",
     "PackageDev",
-    "RPM Spec Syntax"
-  ]
+    "RPM Spec Syntax",
+    "Svelte",
+  ],
+  "bootstrapped": true,
 }

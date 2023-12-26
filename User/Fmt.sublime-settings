@@ -35,6 +35,7 @@
     { "selector": "text.tex.latex", "cmd": ["latexindent", "--cruft=$HOME/Library/Logs/latexindent", "-"] },
     { "selector": "source.yaml", "cmd": ["yamlfmt", "-"] },
     { "selector": "source.ruby", "cmd": ["rubyfmt", "--silence-update-message"] },
+    { "selector": "source.lua", "cmd": ["stylua", "--search-parent-directories", "-"] },
 
     { "selector": "source.shell.fish", "cmd": ["fish_indent"] },
     {
