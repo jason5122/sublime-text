@@ -5,7 +5,7 @@
     "command": "edit_settings",
     "args": {
       "base_file": "${packages}/Default/Default ($platform).sublime-keymap",
-      "default": "[\n\t$0\n]\n"
+      "user_file": "${packages}/User/Default.sublime-keymap"
     }
   },
   // Show Packages folder
@@ -63,33 +63,10 @@
       {
         "key": "selector",
         "operator": "equal",
-        "operand": "source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql, source.lua"
+        "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl, source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql, source.lua"
       }
     ]
   },
-  {
-    "keys": ["ctrl+i"],
-    "command": "fmt_format_buffer",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl"
-      }
-    ]
-  },
-  // Custom clang-format plugin
-  // {
-  //   "keys": ["ctrl+i"],
-  //   "command": "clang_format",
-  //   "context": [
-  //     {
-  //       "key": "selector",
-  //       "operator": "equal",
-  //       "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl"
-  //     }
-  //   ]
-  // },
   // Scope View plugin
   { "keys": ["super+alt+p"], "command": "toggle_scope_display" },
   // No single quote autocomplete in Racket and Scheme
