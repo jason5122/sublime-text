@@ -1,4 +1,6 @@
 {
-  "terminal": "alacritty",
-  "parameters": ["--working-directory", "%CWD%"]
+  // "terminal": "alacritty",
+  // "parameters": ["--working-directory", "%CWD%"]
+
+  "terminal": "launch-alacritty"
 }
