@@ -17,17 +17,11 @@ def get_setting(key, default=None):
     settings = sublime.load_settings('Terminal.sublime-settings')
     os_specific_settings = {}
     if os.name == 'nt':
-        os_specific_settings = sublime.load_settings(
-            'Terminal (Windows).sublime-settings'
-        )
+        os_specific_settings = sublime.load_settings('Terminal (Windows).sublime-settings')
     elif sys.platform == 'darwin':
-        os_specific_settings = sublime.load_settings(
-            'Terminal (OSX).sublime-settings'
-        )
+        os_specific_settings = sublime.load_settings('Terminal (OSX).sublime-settings')
     else:
-        os_specific_settings = sublime.load_settings(
-            'Terminal (Linux).sublime-settings'
-        )
+        os_specific_settings = sublime.load_settings('Terminal (Linux).sublime-settings')
     return os_specific_settings.get(key, settings.get(key, default))
 
 
@@ -68,9 +62,7 @@ class TerminalCommand:
             return paths[0]
         # DEV: On ST3, there is always an active view.
         #   Be sure to check that it's a file with a path (not temporary view)
-        elif (
-            self.window.active_view() and self.window.active_view().file_name()
-        ):
+        elif self.window.active_view() and self.window.active_view().file_name():
             return self.window.active_view().file_name()
         elif self.window.folders():
             return self.window.folders()[0]
@@ -82,8 +74,7 @@ class TerminalCommand:
         try:
             if not dir_:
                 raise NotFoundError(
-                    'The file open in the selected view has '
-                    + 'not yet been saved'
+                    'The file open in the selected view has ' + 'not yet been saved'
                 )
             for k, v in enumerate(parameters):
                 parameters[k] = v.replace('%CWD%', dir_)
@@ -108,9 +99,7 @@ class TerminalCommand:
         except OSError as exception:
             print(str(exception))
             sublime.error_message(
-                'Terminal: The terminal '
-                + TerminalSelector.get()
-                + ' was not found'
+                'Terminal: The terminal ' + TerminalSelector.get() + ' was not found'
             )
         except Exception as exception:
             sublime.error_message('Terminal: ' + str(exception))
@@ -134,9 +123,7 @@ class OpenTerminalCommand(sublime_plugin.WindowCommand, TerminalCommand):
         self.run_terminal(path, terminal, parameters)
 
 
-class OpenTerminalProjectFolderCommand(
-    sublime_plugin.WindowCommand, TerminalCommand
-):
+class OpenTerminalProjectFolderCommand(sublime_plugin.WindowCommand, TerminalCommand):
     def run(self, paths=[], parameters=None):
         path = self.get_path(paths)
         if not path:

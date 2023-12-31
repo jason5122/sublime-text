@@ -2,11 +2,8 @@
   // Edit Key Bindings
   {
     "keys": ["super+shift+,"],
-    "command": "edit_settings",
-    "args": {
-      "base_file": "${packages}/Default/Default ($platform).sublime-keymap",
-      "user_file": "${packages}/User/Default.sublime-keymap"
-    }
+    "command": "open_package_file",
+    "args": { "file": "${packages}/User/Default.sublime-keymap" }
   },
   // Show Packages folder
   {
