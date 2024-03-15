@@ -1,7 +1,0 @@
-[
-    {
-        "command": "move",
-        "args": { "by": "characters", "forward": false, "extend": true }
-    },
-    { "command": "left_delete" }
-]

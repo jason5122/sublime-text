@@ -4,4 +4,15 @@
     "content_margin": 0,
     "layer0.opacity": 0.0
   }
+  // DEBUG: Test out settings to be used in Simple Text.
+  // {
+  //   "class": "tabset_control",
+  //   "tab_overlap": 0,
+  //   "tab_height": 32
+  // },
+  // {
+  //   "class": "tab_control",
+  //   "layer1.opacity": 1.0,
+  //   "layer3.opacity": { "target": 0.0, "speed": 5.0, "interpolation": "smoothstep" }
+  // }
 ]

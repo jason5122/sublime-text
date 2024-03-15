@@ -5,6 +5,10 @@
   "color_scheme": "auto",
   "font_face": "Source Code Pro",
 
+  // "font_face": "Arial",
+  // "theme": "Default Dark.sublime-theme",
+  // "color_scheme": "Mariana.sublime-color-scheme",
+
   // Essential
   "update_check": false,
   "drag_text": false,
@@ -58,6 +62,8 @@
   // "native_tabs": "preferred",
   "mini_diff": "auto",
   "wrap_width": 100,
+  // "overlay_scroll_bars": "disabled",
+  "native_tabs": "disabled",
 
   "find_in_files_max_result_size": 1073741824, // 1GiB
 
