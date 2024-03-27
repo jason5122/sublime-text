@@ -1,0 +1,10 @@
+{
+  "variables": {
+    // "font_face": "Arial",
+    // "font_face": "SF Pro Text",
+    "font_size_sm": 11,
+    "font_size": 12,
+    "font_size_lg": 13,
+    "font_size_title": 24
+  }
+}

@@ -5,6 +5,9 @@
   "color_scheme": "auto",
   "font_face": "Source Code Pro",
 
+  // "font_face": "Fira Code",
+  // "font_options": ["no_italic", "ss03"],
+
   // "font_face": "Arial",
   // "theme": "Default Dark.sublime-theme",
   // "color_scheme": "Mariana.sublime-color-scheme",
@@ -82,7 +85,6 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Vintage",
-  ],
-  "index_files": true,
+  "ignored_packages": ["Vintage"],
+  "index_files": true
 }
