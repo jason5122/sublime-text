@@ -1,0 +1,500 @@
+[
+  {
+    "caption": "File",
+    "mnemonic": "F",
+    "id": "file",
+    "children": [
+      { "command": "new_file", "caption": "New File", "mnemonic": "N" },
+
+      { "command": "prompt_open_file", "caption": "Open File…", "mnemonic": "O", "platform": "!OSX" },
+      { "command": "prompt_open_folder", "caption": "Open Folder…", "platform": "!OSX" },
+      { "command": "prompt_open", "caption": "Open…", "platform": "OSX" },
+      {
+        "command": "clone_file",
+        "args": { "add_to_selection": true, "retain_viewport_position": true },
+        "caption": "Split View",
+        "mnemonic": "e"
+      },
+      { "command": "save", "args": { "async": true }, "caption": "Save", "mnemonic": "S" },
+      { "command": "prompt_save_as", "caption": "Save As…", "mnemonic": "A" },
+      { "command": "save_all", "caption": "Save All", "mnemonic": "l" },
+      { "caption": "-", "id": "window" },
+      { "command": "new_window", "caption": "New Window", "mnemonic": "W" },
+      { "command": "close_window", "caption": "Close Window" },
+      { "caption": "-", "id": "close" },
+      { "command": "close", "caption": "Close File", "mnemonic": "C" },
+      { "command": "revert", "caption": "Revert File", "mnemonic": "v" },
+      { "command": "close_all", "caption": "Close All Files" },
+      { "caption": "-", "id": "exit" },
+      { "command": "exit", "caption": "Exit", "mnemonic": "x", "platform": "Windows" },
+      { "command": "exit", "caption": "Quit", "mnemonic": "Q", "platform": "Linux" }
+    ]
+  },
+  {
+    "caption": "Edit",
+    "mnemonic": "E",
+    "id": "edit",
+    "children": [
+      { "command": "undo", "mnemonic": "U" },
+      { "command": "redo_or_repeat", "mnemonic": "R" },
+      {
+        "caption": "Undo Selection",
+        "children": [
+          { "command": "soft_undo" },
+          { "command": "soft_redo" }
+        ]
+      },
+      { "caption": "-", "id": "clipboard" },
+      { "command": "cut", "mnemonic": "t" },
+      { "command": "copy", "mnemonic": "C" },
+      { "command": "paste", "mnemonic": "P" },
+      { "command": "paste_and_indent", "mnemonic": "I" },
+      { "command": "paste_from_history" },
+      { "caption": "-" },
+      {
+        "caption": "Line",
+        "mnemonic": "L",
+        "id": "line",
+        "children": [
+          { "command": "indent" },
+          { "command": "unindent" },
+          { "command": "reindent", "args": { "single_line": true } },
+          { "command": "swap_line_up" },
+          { "command": "swap_line_down" },
+          { "command": "duplicate_line" },
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Delete Line.sublime-macro" },
+            "caption": "Delete Line"
+          },
+          { "command": "join_lines" }
+        ]
+      },
+      {
+        "caption": "Comment",
+        "mnemonic": "m",
+        "id": "comment",
+        "children": [
+          { "command": "toggle_comment", "args": { "block": false }, "caption": "Toggle Comment" },
+          { "command": "toggle_comment", "args": { "block": true }, "caption": "Toggle Block Comment" }
+        ]
+      },
+      {
+        "caption": "Text",
+        "mnemonic": "T",
+        "id": "text",
+        "children": [
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Add Line Before.sublime-macro" },
+            "caption": "Insert Line Before"
+          },
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Add Line.sublime-macro" },
+            "caption": "Insert Line After"
+          },
+          { "caption": "-" },
+          { "command": "delete_word", "args": { "forward": true }, "caption": "Delete Word Forward" },
+          { "command": "delete_word", "args": { "forward": false }, "caption": "Delete Word Backward" },
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Delete Line.sublime-macro" },
+            "caption": "Delete Line"
+          },
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Delete to Hard EOL.sublime-macro" },
+            "caption": "Delete to End"
+          },
+          {
+            "command": "run_macro_file",
+            "args": { "file": "res://Packages/Default/Delete to Hard BOL.sublime-macro" },
+            "caption": "Delete to Beginning"
+          }
+        ]
+      },
+      {
+        "caption": "Code Folding",
+        "id": "fold",
+        "children": [
+          { "command": "fold" },
+          { "command": "unfold" },
+          { "command": "unfold_all", "caption": "Unfold All" },
+          { "caption": "-" },
+          { "caption": "Fold All", "command": "fold_by_level", "mnemonic": "A", "args": { "level": 1 } },
+          { "caption": "Fold Level 2", "command": "fold_by_level", "mnemonic": "2", "args": { "level": 2 } },
+          { "caption": "Fold Level 3", "command": "fold_by_level", "mnemonic": "3", "args": { "level": 3 } },
+          { "caption": "Fold Level 4", "command": "fold_by_level", "mnemonic": "4", "args": { "level": 4 } },
+          { "caption": "Fold Level 5", "command": "fold_by_level", "mnemonic": "5", "args": { "level": 5 } },
+          { "caption": "Fold Level 6", "command": "fold_by_level", "mnemonic": "6", "args": { "level": 6 } },
+          { "caption": "Fold Level 7", "command": "fold_by_level", "mnemonic": "7", "args": { "level": 7 } },
+          { "caption": "Fold Level 8", "command": "fold_by_level", "mnemonic": "8", "args": { "level": 8 } },
+          { "caption": "Fold Level 9", "command": "fold_by_level", "mnemonic": "9", "args": { "level": 9 } },
+          { "caption": "-" },
+          { "command": "fold_tag_attributes", "caption": "Fold Tag Attributes" }
+        ]
+      },
+      { "command": "auto_complete", "caption": "Show Completions" },
+      { "caption": "-", "id": "end" }
+    ]
+  },
+  {
+    "caption": "View",
+    "mnemonic": "V",
+    "id": "view",
+    "children": [
+      {
+        "caption": "Side Bar",
+        "id": "side_bar",
+        "children": [
+          { "command": "toggle_side_bar" },
+          { "caption": "-" },
+          { "command": "toggle_show_open_files" }
+        ]
+      },
+      { "command": "toggle_minimap" },
+      { "command": "toggle_tabs" },
+      { "command": "toggle_status_bar" },
+      { "command": "toggle_menu" },
+      { "command": "show_panel", "args": { "panel": "console", "toggle": true } },
+      { "caption": "-", "id": "full_screen" },
+      { "command": "toggle_full_screen" },
+      { "command": "toggle_distraction_free" },
+      { "caption": "-", "id": "groups" },
+      {
+        "caption": "Layout",
+        "mnemonic": "L",
+        "id": "layout",
+        "children": [
+          {
+            "caption": "Single",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1]]
+            }
+          },
+          {
+            "caption": "Columns: 2",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 0.5, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+            }
+          },
+          {
+            "caption": "Columns: 3",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 0.33, 0.66, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+            }
+          },
+          {
+            "caption": "Columns: 4",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+              "rows": [0.0, 1.0],
+              "cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+            }
+          },
+          {
+            "caption": "Rows: 2",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 1.0],
+              "rows": [0.0, 0.5, 1.0],
+              "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+            }
+          },
+          {
+            "caption": "Rows: 3",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 1.0],
+              "rows": [0.0, 0.33, 0.66, 1.0],
+              "cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
+            }
+          },
+          {
+            "caption": "Grid: 4",
+            "command": "set_layout",
+            "args": {
+              "cols": [0.0, 0.5, 1.0],
+              "rows": [0.0, 0.5, 1.0],
+              "cells": [
+                [0, 0, 1, 1],
+                [1, 0, 2, 1],
+                [0, 1, 1, 2],
+                [1, 1, 2, 2]
+              ]
+            }
+          }
+        ]
+      },
+      { "caption": "-" },
+      {
+        "caption": "Syntax",
+        "mnemonic": "S",
+        "id": "syntax",
+        "children": [{ "command": "$file_types" }]
+      },
+      {
+        "caption": "Indentation",
+        "mnemonic": "I",
+        "id": "indentation",
+        "children": [
+          {
+            "command": "toggle_setting",
+            "args": { "setting": "translate_tabs_to_spaces" },
+            "caption": "Indent Using Spaces",
+            "checkbox": true
+          },
+          { "caption": "-" },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 1 },
+            "caption": "Tab Width: 1",
+            "mnemonic": "1",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 2 },
+            "caption": "Tab Width: 2",
+            "mnemonic": "2",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 3 },
+            "caption": "Tab Width: 3",
+            "mnemonic": "3",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 4 },
+            "caption": "Tab Width: 4",
+            "mnemonic": "4",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 5 },
+            "caption": "Tab Width: 5",
+            "mnemonic": "5",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 6 },
+            "caption": "Tab Width: 6",
+            "mnemonic": "6",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 7 },
+            "caption": "Tab Width: 7",
+            "mnemonic": "7",
+            "checkbox": true
+          },
+          {
+            "command": "set_setting",
+            "args": { "setting": "tab_size", "value": 8 },
+            "caption": "Tab Width: 8",
+            "mnemonic": "8",
+            "checkbox": true
+          },
+          { "caption": "-" },
+          { "command": "detect_indentation", "caption": "Guess Settings From Buffer" },
+          { "caption": "-" },
+          {
+            "command": "expand_tabs",
+            "caption": "Convert Indentation to Spaces",
+            "args": { "set_translate_tabs": true }
+          },
+          {
+            "command": "unexpand_tabs",
+            "caption": "Convert Indentation to Tabs",
+            "args": { "set_translate_tabs": true }
+          }
+        ]
+      },
+      {
+        "caption": "Line Endings",
+        "mnemonic": "n",
+        "id": "line_endings",
+        "children": [
+          { "command": "set_line_ending", "args": { "type": "windows" }, "caption": "Windows", "checkbox": true },
+          { "command": "set_line_ending", "args": { "type": "unix" }, "caption": "Unix", "checkbox": true },
+          { "command": "set_line_ending", "args": { "type": "cr" }, "caption": "Mac OS 9", "checkbox": true }
+        ]
+      },
+      { "caption": "-", "id": "settings" },
+      {
+        "command": "toggle_setting",
+        "args": { "setting": "word_wrap" },
+        "caption": "Word Wrap",
+        "mnemonic": "W",
+        "checkbox": true
+      },
+      { "command": "toggle_setting", "args": { "setting": "spell_check" }, "caption": "Spell Check", "checkbox": true }
+    ]
+  },
+  {
+    "caption": "Help",
+    "mnemonic": "H",
+    "id": "help",
+    "children": [
+      { "command": "show_progress_window", "caption": "Indexing Status…" },
+      { "command": "show_attribution", "caption": "Licenses and Attribution…" }
+    ]
+  },
+
+  // Default
+  {
+    "caption": "Tools",
+    "mnemonic": "T",
+    "id": "tools",
+    "children": [
+      { "command": "show_overlay", "args": { "overlay": "command_palette" }, "caption": "Command Palette…" },
+      {
+        "command": "show_overlay",
+        "args": { "overlay": "command_palette", "text": "Snippet: " },
+        "caption": "Snippets…"
+      },
+      { "caption": "-", "id": "build" },
+      {
+        "caption": "Build System",
+        "mnemonic": "u",
+        "children": [
+          { "command": "set_build_system", "args": { "file": "" }, "caption": "Automatic", "checkbox": true },
+          { "caption": "-" },
+          { "command": "set_build_system", "args": { "index": 0 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 1 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 2 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 3 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 4 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 5 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 6 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 7 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 8 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 9 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 10 }, "checkbox": true },
+          { "command": "set_build_system", "args": { "index": 11 }, "checkbox": true },
+          { "caption": "-" },
+          { "command": "$build_systems" },
+          { "caption": "-" },
+          { "command": "new_build_system", "caption": "New Build System…" }
+        ]
+      },
+      { "command": "build", "mnemonic": "B" },
+      { "command": "build", "args": { "select": true }, "caption": "Build With…" },
+      { "command": "cancel_build", "caption": "Cancel Build", "mnemonic": "C" },
+      {
+        "caption": "Build Results",
+        "mnemonic": "R",
+        "children": [
+          {
+            "command": "show_panel",
+            "args": { "panel": "output.exec" },
+            "caption": "Show Build Results",
+            "mnemonic": "S"
+          },
+          { "command": "next_result", "mnemonic": "N" },
+          { "command": "prev_result", "caption": "Previous Result", "mnemonic": "P" }
+        ]
+      },
+      { "command": "toggle_save_all_on_build", "caption": "Save All on Build", "mnemonic": "A", "checkbox": true },
+      { "caption": "-", "id": "macros" },
+      { "command": "toggle_record_macro", "mnemonic": "M" },
+      { "command": "run_macro", "caption": "Playback Macro", "mnemonic": "P" },
+      { "command": "save_macro", "caption": "Save Macro…", "mnemonic": "v" },
+      {
+        "caption": "Macros",
+        "children": [{ "command": "$macros" }]
+      },
+      { "caption": "-" },
+      {
+        "caption": "Developer",
+        "children": [
+          { "command": "new_plugin", "caption": "New Plugin…" },
+          { "command": "new_snippet", "caption": "New Snippet…" },
+          { "command": "new_syntax", "caption": "New Syntax…" },
+          { "command": "convert_syntax" },
+          { "caption": "-" },
+          { "caption": "-" },
+          { "command": "profile_plugins" },
+          { "caption": "-" },
+          { "command": "view_resource", "caption": "View Package File…" },
+          { "command": "show_scope_name" }
+        ]
+      },
+      { "command": "install_package_control", "caption": "Install Package Control…" },
+      { "caption": "-", "id": "end" }
+    ]
+  },
+  // These go into "Sublime Text > Settings..."?
+  {
+    "caption": "Preferences",
+    "mnemonic": "n",
+    // If we change this to anything else, this becomes a regular entry.
+    "id": "preferences",
+    "children": [
+      {
+        "caption": "Font",
+        "children": [
+          { "command": "choose_font", "caption": "Choose…" },
+          { "command": "increase_font_size", "caption": "Larger" },
+          { "command": "decrease_font_size", "caption": "Smaller" },
+          { "caption": "-" },
+          { "command": "reset_font_size", "caption": "Reset Size" }
+        ]
+      }
+    ]
+  },
+  {
+    "caption": "Project",
+    "id": "project",
+    "mnemonic": "P",
+    "children": [
+      { "command": "prompt_open_project_or_workspace", "caption": "Open Project…" },
+      { "command": "prompt_switch_project_or_workspace", "caption": "Switch Project…" },
+      { "command": "prompt_select_workspace", "caption": "Quick Switch Project…", "mnemonic": "S" },
+      {
+        "caption": "Open Recent",
+        "children": [
+          { "command": "open_recent_project_or_workspace", "args": { "index": 0 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 1 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 2 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 3 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 4 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 5 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 6 } },
+          { "command": "open_recent_project_or_workspace", "args": { "index": 7 } },
+          { "caption": "-" },
+          { "command": "clear_recent_projects_and_workspaces", "caption": "Clear Items" },
+          { "command": "clear_missing_recent_projects_and_workspaces", "caption": "Remove Deleted" }
+        ]
+      },
+      { "caption": "-" },
+      { "command": "save_project_and_workspace_as", "caption": "Save Project As…", "mnemonic": "A" },
+      { "command": "close_workspace", "caption": "Close Project", "mnemonic": "C" },
+      { "command": "open_file", "args": { "file": "${project}" }, "caption": "Edit Project" },
+      { "caption": "-" },
+      { "command": "new_window_for_project", "caption": "New Workspace for Project" },
+      { "command": "save_workspace_as", "caption": "Save Workspace As…", "mnemonic": "A" },
+      { "caption": "-" },
+      { "command": "prompt_add_folder", "caption": "Add Folder to Project…", "mnemonic": "d" },
+      { "command": "close_folder_list", "caption": "Remove all Folders from Project", "mnemonic": "m" },
+      { "command": "refresh_folder_list", "caption": "Refresh Folders", "mnemonic": "e" }
+    ]
+  }
+]

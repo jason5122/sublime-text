@@ -1,4 +1,7 @@
 [
+  // Experimental.
+  { "keys": ["ctrl+r"], "command": "show_overlay", "args": { "overlay": "goto", "text": "@" } },
+
   {
     "keys": ["primary+,"],
     "command": "edit_settings",
@@ -55,7 +58,7 @@
       {
         "key": "selector",
         "operator": "equal",
-        "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl, source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql, source.lua"
+        "operand": "source.c++, source.c, source.java, source.objc, source.objc++, source.glsl, source.json, text.json, source.yaml, source.python, text.tex.latex, source.js, source.css, text.html, source.shell.bash, source.rust, source.ts, source.tsx, source.jsx, source.toml, source.shell.fish, source.cmake, source.racket, source.terraform, source.r, source.scheme, source.haskell, source.ocaml, source.go, source.ruby, source.gn, source.lisp, source.swift, text.html.markdown, source.dockerfile, source.sql, source.lua, text.html.basic"
       }
     ]
   },

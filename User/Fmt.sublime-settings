@@ -15,6 +15,7 @@
     { "selector": "source.sql", "cmd": ["dprint", "fmt", "--stdin=file.sql"] },
     { "selector": "source.css", "cmd": ["dprint", "fmt", "--stdin=file.css"] },
     { "selector": "text.html", "cmd": ["dprint", "fmt", "--stdin=file.html"] },
+    { "selector": "text.html.basic", "cmd": ["dprint", "fmt", "--stdin=file.html"] },
     { "selector": "text.html.svelte", "cmd": ["dprint", "fmt", "--stdin=file.svelte"] },
     // clang-format
     { "selector": "source.c", "cmd": ["clang-format", "--assume-filename=file.c"] },
@@ -46,6 +47,7 @@
         "--tab-size=4",
         "--use-tabchars=True",
         "--dangle-parens=True",
+        "--line-width=100",
         "-"
       ]
     },

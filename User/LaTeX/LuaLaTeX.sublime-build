@@ -2,5 +2,5 @@
     "shell_cmd": "lualatex \"$file\" && open \"$file_base_name\".pdf",
     "selector": "text.tex.latex",
 
-    "hide_after_success": true
+    // "hide_after_success": true
 }

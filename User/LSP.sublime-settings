@@ -1,0 +1,11 @@
+{
+  "inhibit_word_completions": true,
+
+  "clients": {
+    "quick-lint-js": {
+      "command": ["quick-lint-js", "--lsp-server"],
+      "enabled": true,
+      "selector": "source.js"
+    }
+  }
+}

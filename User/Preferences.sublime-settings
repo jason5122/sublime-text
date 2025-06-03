@@ -5,8 +5,37 @@
   "color_scheme": "auto",
   "font_face": "Source Code Pro",
 
+  // "color_scheme": "Mariana.sublime-color-scheme",
+  // "theme": "Default Dark.sublime-theme",
+
+  // "font_face": "SF Pro Text",
+  // "font_face": "Monaco",
+  // "font_face": "Courier",
+  // "font_face": "Courier New",
+  // "font_face": "Andale Mono",
+  // "font_face": "system",
+  // Minimize gutter.
+  // "line_numbers": false,
+  "fold_buttons": false,
+  // Completely remove gutter + margin.
+  // "gutter": false,
+  "margin": 0,
+  "show_line_endings": true,
+  // "overlay_scroll_bars": "disabled",
+  "inactive_sheet_dimming": false,
+  // "sidebar_on_right": true,
+
+  // "draw_indent_guides": false,
+  // "indent_guide_options": ["draw_normal", "solid"],
+  // "font_options": ["no_bold", "no_italic"],
+
+  // "auto_indent": false,
+  // "show_git_status_in_status_bar": false,
+
   // "font_face": "Fira Code",
   // "font_options": ["no_italic", "ss03"],
+  // "font_options": ["no_antialias"],
+  // "theme_font_options": ["no_antialias"],
 
   // "font_face": "Arial",
   // "theme": "Default Dark.sublime-theme",
@@ -67,6 +96,8 @@
   "wrap_width": 100,
   // "overlay_scroll_bars": "disabled",
   "native_tabs": "disabled",
+  // "show_encoding": true,
+  "goto_anything_file_preview": false,
 
   "find_in_files_max_result_size": 1073741824, // 1GiB
 
@@ -85,6 +116,7 @@
   // "relative_line_numbers": true,
   // "vintage_ctrl_keys": true,
 
-  "ignored_packages": ["Vintage"],
-  "index_files": true
+  "ignored_packages": ["Vintage",
+  ],
+  "index_files": true,
 }
