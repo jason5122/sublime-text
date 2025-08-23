@@ -23,7 +23,7 @@
     { "selector": "source.objc", "cmd": ["clang-format", "--assume-filename=file.m"] },
     { "selector": "source.objc++", "cmd": ["clang-format", "--assume-filename=file.mm"] },
     { "selector": "source.glsl", "cmd": ["clang-format", "--assume-filename=file.glsl"] },
-    { "selector": "source.java", "cmd": ["clang-format", "--assume-filename=file.java"] },
+    { "selector": "source.java", "cmd": ["palantir-java-format", "--amazon", "-"] },
     // official formatters
     { "selector": "source.gn", "cmd": ["gn", "format", "--stdin"] },
     { "selector": "source.rust", "cmd": ["rustfmt"] },
@@ -31,7 +31,7 @@
     { "selector": "source.terraform", "cmd": ["terraform", "fmt", "-"] },
     // miscellaneous
     { "selector": "source.lisp, source.scheme, source.racket", "cmd": ["scmindent"] },
-    { "selector": "source.shell.bash", "cmd": ["shfmt", "-"] },
+    { "selector": "source.shell.bash | source.shell.zsh", "cmd": ["shfmt", "-"] },
     { "selector": "source.swift", "cmd": ["swift-format", "--configuration=$HOME/.swift-format"] },
     { "selector": "text.tex.latex", "cmd": ["latexindent", "--cruft=$HOME/Library/Logs/latexindent", "-"] },
     { "selector": "source.yaml", "cmd": ["yamlfmt", "-"] },
@@ -72,7 +72,9 @@
         "--name",
         "file.ml"
       ]
-    }
+    },
+    { "selector": "source.Kotlin", "cmd": ["ktfmt", "-"] },
+    { "selector": "text.xml", "cmd": ["dprint", "fmt", "--stdin=file.xml"] }
   ],
   // replaces tabs with spaces
   "merge_type": "replace"

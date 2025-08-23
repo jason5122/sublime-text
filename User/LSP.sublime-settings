@@ -4,8 +4,18 @@
   "clients": {
     "quick-lint-js": {
       "command": ["quick-lint-js", "--lsp-server"],
-      "enabled": true,
-      "selector": "source.js"
+      "selector": "source.js",
+      "enabled": false
+    },
+    "barium": {
+      "command": ["barium"],
+      "selector": "source.brazil-config",
+      "enabled": true
     }
+    // "jdtls": {
+    //   "command": ["jdtls"],
+    //   "selector": "source.java",
+    //   "enabled": true
+    // }
   }
 }

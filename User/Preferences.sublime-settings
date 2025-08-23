@@ -5,6 +5,7 @@
   "color_scheme": "auto",
   "font_face": "Source Code Pro",
 
+  // TODO: Remove this.
   // "color_scheme": "Mariana.sublime-color-scheme",
   // "theme": "Default Dark.sublime-theme",
 
@@ -76,7 +77,7 @@
   "show_definitions": false,
 
   // Experimental
-  "tab_size": 2,
+  // "tab_size": 2,
   "sublime_merge_path": null,
   // "themed_title_bar": false,
   // "native_tabs": "disabled",
