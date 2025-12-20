@@ -1,0 +1,5 @@
+{
+  "command": ["kotlin-lsp", "--stdio"],
+  "selector": "source.kotlin",
+  "enabled": true
+}
