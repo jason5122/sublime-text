@@ -7,15 +7,16 @@
       "selector": "source.js",
       "enabled": false
     },
-    "barium": {
-      "command": ["barium"],
-      "selector": "source.brazil-config",
+    // Disabled since we are currently using our custom AbstractPlugin (Package/LSP-kotlin-jason).
+    "kotlin": {
+      "command": ["kotlin-lsp", "--stdio"],
+      "selector": "source.kotlin",
+      "enabled": false
+    },
+    "pyrefly": {
+      "command": ["pyrefly", "lsp"],
+      "selector": "source.python",
       "enabled": true
     }
-    // "jdtls": {
-    //   "command": ["jdtls"],
-    //   "selector": "source.java",
-    //   "enabled": true
-    // }
   }
 }

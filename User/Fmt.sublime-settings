@@ -11,7 +11,7 @@
     { "selector": "text.html.markdown", "cmd": ["dprint", "fmt", "--stdin=file.md"] },
     { "selector": "source.dockerfile", "cmd": ["dprint", "fmt", "--stdin=Dockerfile"] },
     { "selector": "source.toml", "cmd": ["dprint", "fmt", "--stdin=file.toml"] },
-    { "selector": "source.python", "cmd": ["dprint", "fmt", "--stdin=file.py"] },
+    { "selector": "source.python", "cmd": ["ruff", "format", "-"] },
     { "selector": "source.sql", "cmd": ["dprint", "fmt", "--stdin=file.sql"] },
     { "selector": "source.css", "cmd": ["dprint", "fmt", "--stdin=file.css"] },
     { "selector": "text.html", "cmd": ["dprint", "fmt", "--stdin=file.html"] },
@@ -73,7 +73,7 @@
         "file.ml"
       ]
     },
-    { "selector": "source.Kotlin", "cmd": ["ktfmt", "-"] },
+    { "selector": "source.kotlin", "cmd": ["ktfmt", "--kotlinlang-style", "-"] },
     { "selector": "text.xml", "cmd": ["dprint", "fmt", "--stdin=file.xml"] }
   ],
   // replaces tabs with spaces

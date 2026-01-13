@@ -1,0 +1,6 @@
+{
+  "cmd": ["kotlinc", "-script", "$file"],
+  "file_regex": "^(.*):([0-9]+):([0-9]+): (?:error|warning):(.*)",
+  // "selector": "source.kotlin",
+  "file_patterns": ["*.kts"]
+}

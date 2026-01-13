@@ -99,6 +99,7 @@
   "native_tabs": "disabled",
   // "show_encoding": true,
   "goto_anything_file_preview": false,
+  "disable_plugin_host_3.3": true,
 
   "find_in_files_max_result_size": 1073741824, // 1GiB
 
@@ -120,4 +121,17 @@
   "ignored_packages": ["Vintage",
   ],
   "index_files": true,
+  "image_file_patterns": [
+    "*.jpeg",
+    "*.jpg",
+    "*.gif",
+    "*.png",
+    "*.ico",
+    "*.bmp",
+    "*.tga",
+    "*.psd",
+    "*.pgm",
+    "*.webp",
+    "*.hdr"
+  ],
 }
