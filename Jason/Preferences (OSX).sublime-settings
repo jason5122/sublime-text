@@ -1,0 +1,5 @@
+{
+  "font_size": 16,
+  "default_font_size": 16,
+  "terminal_command": "open -a /Applications/Ghostty.app \"$dir\""
+}
