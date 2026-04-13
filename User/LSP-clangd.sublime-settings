@@ -1,7 +1,9 @@
 {
   "enabled": false,
 
-  "initializationOptions": {
+  "binary": "custom",
+  "initialization_options": {
+    "custom_command": ["/Users/jason/experiments/simple-text/third_party/llvm-toolchain/bin/clangd"],
     "clangd.header-insertion": "never"
   }
 }

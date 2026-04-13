@@ -73,7 +73,8 @@
         "file.ml"
       ]
     },
-    { "selector": "source.kotlin", "cmd": ["ktfmt", "--kotlinlang-style", "-"] },
+    // { "selector": "source.Kotlin", "cmd": ["ktfmt", "--kotlinlang-style", "-"] },
+    { "selector": "source.Kotlin", "cmd": ["ktfmt", "--google-style", "-"] },
     { "selector": "text.xml", "cmd": ["dprint", "fmt", "--stdin=file.xml"] }
   ],
   // replaces tabs with spaces

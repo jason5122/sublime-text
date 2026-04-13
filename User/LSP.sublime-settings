@@ -10,13 +10,17 @@
     // Disabled since we are currently using our custom AbstractPlugin (Package/LSP-kotlin-jason).
     "kotlin": {
       "command": ["kotlin-lsp", "--stdio"],
-      "selector": "source.kotlin",
+      "selector": "source.Kotlin",
       "enabled": false
     },
-    "pyrefly": {
-      "command": ["pyrefly", "lsp"],
+    "ty": {
+      "command": ["ty", "server"],
       "selector": "source.python",
       "enabled": true
     }
-  }
+  },
+
+  "log_debug": true,
+  // This output panel can be toggled from the command palette with the command "LSP: Toggle Log Panel".
+  "log_server": ["panel"]
 }
