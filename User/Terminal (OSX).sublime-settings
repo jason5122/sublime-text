@@ -1,4 +1,0 @@
-{
-  "cmd": ["open", "-a", "/Applications/Ghostty.app", "%CWD%"]
-  // "cmd": ["launch-alacritty"]
-}
