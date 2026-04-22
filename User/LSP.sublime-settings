@@ -1,25 +1,4 @@
 {
-  "inhibit_word_completions": true,
-
-  "clients": {
-    "quick-lint-js": {
-      "command": ["quick-lint-js", "--lsp-server"],
-      "selector": "source.js",
-      "enabled": false
-    },
-    // Disabled since we are currently using our custom AbstractPlugin (Package/LSP-kotlin-jason).
-    "kotlin": {
-      "command": ["kotlin-lsp", "--stdio"],
-      "selector": "source.Kotlin",
-      "enabled": false
-    },
-    "ty": {
-      "command": ["ty", "server"],
-      "selector": "source.python",
-      "enabled": true
-    }
-  },
-
   "log_debug": true,
   // This output panel can be toggled from the command palette with the command "LSP: Toggle Log Panel".
   "log_server": ["panel"]

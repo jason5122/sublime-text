@@ -46,7 +46,7 @@
   },
 
   { "keys": ["primary+e"], "command": "open_terminal", "args": { "dir": "$file_path" } },
-  { "keys": ["primary+shift+e"], "command": "open_terminal", "args": { "dir": "$project_path" } },
+  { "keys": ["primary+shift+e"], "command": "open_terminal", "args": { "dir": "$folder" } },
 
   { "keys": ["primary+0"], "command": "toggle_side_bar" },
   { "keys": ["primary+shift+0"], "command": "reveal_in_side_bar" },
